@@ -11,18 +11,57 @@
     "license": "CSLB #1127356"
   },
   "adu": {
-    "studio": { "price": "$100,000" },
-    "oneBed": { "price": "$150,000" },
-    "oneBedDen": { "price": "$207,000" }
+    "studio": {
+      "price": "$120,000"
+    },
+    "oneBed": {
+      "price": "$170,000"
+    },
+    "oneBedDen": {
+      "price": "$207,000"
+    }
   },
-  "rating": { "score": 5.0, "count": 6 },
+  "rating": {
+    "score": 5,
+    "count": 7
+  },
   "reviewUrl": "https://www.google.com/search?q=Dream+Haven+Construction+West+Hollywood",
   "reviews": [
-    { "stars": 5, "text": "I had a great experience working with Ayman on a kitchen remodeling project. He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.", "name": "Andrei Den", "project": "Kitchen Remodel" },
-    { "stars": 5, "text": "Ayman is amazing! He is on time, brings everything he needs, and explains the job. I learned more about my kitchen appliances than I knew before! Great work on electrical also. Plumbing and walls also handled like a pro. Highly recommend this company!!", "name": "Christel Hachigian", "project": "Kitchen · Electrical · Plumbing" },
-    { "stars": 5, "text": "I recently had a kitchen remodeling and used Dream Haven Construction for some of the work. I am very happy with the results and the professionalism that Ayman showed.", "name": "Sofia Sosa", "project": "Kitchen Remodel" },
-    { "stars": 5, "text": "Very thoughtful and caring work. He went out of the way to find parts that weren't entirely needed and did it with grace. Great job all around! Highly recommend for appliance install and set up!", "name": "Scott Olsen", "project": "Appliance Install" },
-    { "stars": 5, "text": "Great contractor. Knows what he's doing. My job looks great.", "name": "William Preston", "project": "Reasonable Price" },
-    { "stars": 5, "text": "I love my new bathroom!! Thank you Dream Haven!", "name": "Louise Copp", "project": "Bathroom Remodel" }
+    {
+      "stars": 5,
+      "text": "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation. Ayman handled all of the construction and renovation work, and we couldn’t be happier with the results.\n\nFrom the beginning, Ayman was professional, dependable, responsive, and very attentive to the details. He coordinated and completed the many aspects of the renovation, including the work necessary to transform the space into the kitchen we envisioned. The quality of the workmanship was excellent, and he genuinely cared about making sure everything was done correctly.\n\nOur finished kitchen is absolutely beautiful and has completely transformed our home. A renovation of this size can be stressful, but Ayman made the process as smooth as possible and took pride in the quality of his work.\n\nWe highly recommend Ayman and Dream Haven Construction to anyone considering a kitchen renovation or other home improvement project.",
+      "name": "Cheryl Scott",
+      "project": "Home renovations"
+    },
+    {
+      "stars": 5,
+      "text": "I had a great experience working with Ayman on a kitchen remodeling project. He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.",
+      "name": "Andrei Den",
+      "project": "Kitchen Remodel"
+    },
+    {
+      "stars": 5,
+      "text": "Ayman is amazing! He is on time, brings everything he needs, and explains the job. I learned more about my kitchen appliances than I knew before! Great work on electrical also. Plumbing and walls also handled like a pro. Highly recommend this company!!",
+      "name": "Christel Hachigian",
+      "project": "Kitchen · Electrical · Plumbing"
+    },
+    {
+      "stars": 5,
+      "text": "I recently had a kitchen remodeling and used Dream Haven Construction for some of the work. I am very happy with the results and the professionalism that Ayman showed.",
+      "name": "Sofia Sosa",
+      "project": "Kitchen Remodel"
+    },
+    {
+      "stars": 5,
+      "text": "Very thoughtful and caring work. He went out of the way to find parts that weren't entirely needed and did it with grace. Great job all around! Highly recommend for appliance install and set up!",
+      "name": "Scott Olsen",
+      "project": "Appliance Install"
+    },
+    {
+      "stars": 5,
+      "text": "I love my new bathroom!! Thank you Dream Haven!",
+      "name": "Louise Copp",
+      "project": "Bathroom Remodel"
+    }
   ]
 }
