@@ -104,6 +104,12 @@
 
   /* ---------- hero ---------- */
   .hero{padding:100px 0 96px;border-bottom:1px solid var(--rule);}
+  .hero-figure{margin-top:52px;position:relative;}
+  .hero-figure img{width:100%;height:clamp(280px,46vw,520px);object-fit:cover;display:block;}
+  .hero-caption{
+    position:absolute;left:0;bottom:0;background:var(--ivory);border-top:1px solid var(--rule);border-right:1px solid var(--rule);
+    padding:12px 22px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);
+  }
   .hero-head{font-size:clamp(2.8rem,6.4vw,5.4rem);max-width:14ch;margin:26px 0 28px;}
   .hero-head em{font-style:italic;color:var(--gold-deep);}
   .hero-sub{font-size:1.06rem;color:var(--ink-soft);max-width:46ch;margin-bottom:38px;}
@@ -359,6 +365,10 @@
         <div class="field"><label>Google Rating</label><div class="val">5.0 ★ · 6 Reviews</div></div>
         <div class="field"><label>Contact</label><div class="val"><a href="tel:3108445101" data-cms="contact.phoneDisplay">(310) 844‑5101</a></div></div>
       </div>
+      <figure class="hero-figure">
+        <img src="images/adu-after.jpg" alt="Completed ADU garage conversion by Dream Haven Construction">
+        <figcaption class="hero-caption">Recent Work · Southern California</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -873,5 +883,17 @@
   });
 </script>
 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
