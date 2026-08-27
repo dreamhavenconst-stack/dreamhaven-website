@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "kicker": "Licensed California General Contractor · Southern California",
+    "headline": "Structural problems other contractors <em>avoid</em> — that's where we start.",
+    "subhead": "Dream Haven Construction plans and builds kitchen, bathroom, and ADU projects the way an engineer would: feasibility first, permits handled properly, and a schedule you can actually hold us to."
+  },
+  "contact": {
+    "phoneDisplay": "(310) 844-5101",
+    "phoneHref": "3108445101",
+    "address": "930 Palm Ave, Unit 301, West Hollywood, CA 90069",
+    "license": "CSLB #1127356"
+  },
+  "adu": {
+    "studio": { "price": "$100,000" },
+    "oneBed": { "price": "$150,000" },
+    "oneBedDen": { "price": "$207,000" }
+  },
+  "rating": { "score": 5.0, "count": 6 },
+  "reviewUrl": "https://www.google.com/search?q=Dream+Haven+Construction+West+Hollywood",
+  "reviews": [
+    { "stars": 5, "text": "I had a great experience working with Ayman on a kitchen remodeling project. He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.", "name": "Andrei Den", "project": "Kitchen Remodel" },
+    { "stars": 5, "text": "Ayman is amazing! He is on time, brings everything he needs, and explains the job. I learned more about my kitchen appliances than I knew before! Great work on electrical also. Plumbing and walls also handled like a pro. Highly recommend this company!!", "name": "Christel Hachigian", "project": "Kitchen · Electrical · Plumbing" },
+    { "stars": 5, "text": "I recently had a kitchen remodeling and used Dream Haven Construction for some of the work. I am very happy with the results and the professionalism that Ayman showed.", "name": "Sofia Sosa", "project": "Kitchen Remodel" },
+    { "stars": 5, "text": "Very thoughtful and caring work. He went out of the way to find parts that weren't entirely needed and did it with grace. Great job all around! Highly recommend for appliance install and set up!", "name": "Scott Olsen", "project": "Appliance Install" },
+    { "stars": 5, "text": "Great contractor. Knows what he's doing. My job looks great.", "name": "William Preston", "project": "Reasonable Price" },
+    { "stars": 5, "text": "I love my new bathroom!! Thank you Dream Haven!", "name": "Louise Copp", "project": "Bathroom Remodel" }
+  ]
+}

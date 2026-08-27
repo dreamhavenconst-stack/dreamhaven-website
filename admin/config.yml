@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "site-data"
+        label: "Site Content"
+        file: "content/site-data.json"
+        fields:
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow Text", name: "kicker", widget: "string" }
+              - { label: "Headline (use <em>word</em> for gold italic emphasis)", name: "headline", widget: "string" }
+              - { label: "Subheadline", name: "subhead", widget: "text" }
+
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Phone (display)", name: "phoneDisplay", widget: "string" }
+              - { label: "Phone (digits only, for tel: links)", name: "phoneHref", widget: "string" }
+              - { label: "Office Address", name: "address", widget: "string" }
+              - { label: "License Number", name: "license", widget: "string" }
+
+          - label: "ADU Pricing"
+            name: "adu"
+            widget: "object"
+            fields:
+              - label: "Studio (~400 sq ft)"
+                name: "studio"
+                widget: "object"
+                fields: [{ label: "Starting Price", name: "price", widget: "string" }]
+              - label: "One Bedroom (~500 sq ft)"
+                name: "oneBed"
+                widget: "object"
+                fields: [{ label: "Starting Price", name: "price", widget: "string" }]
+              - label: "One Bed + Den (~600 sq ft)"
+                name: "oneBedDen"
+                widget: "object"
+                fields: [{ label: "Starting Price", name: "price", widget: "string" }]
+
+          - label: "Google Rating Summary"
+            name: "rating"
+            widget: "object"
+            fields:
+              - { label: "Average Score (e.g. 5.0)", name: "score", widget: "number", value_type: "float" }
+              - { label: "Number of Reviews", name: "count", widget: "number", value_type: "int" }
+
+          - { label: "Google Review Link (button destination)", name: "reviewUrl", widget: "string" }
+
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            label_singular: "Review"
+            summary: "{{name}} — {{stars}}★"
+            fields:
+              - { label: "Star Rating (1-5)", name: "stars", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+              - { label: "Review Text", name: "text", widget: "text" }
+              - { label: "Reviewer Name", name: "name", widget: "string" }
+              - { label: "Project Type", name: "project", widget: "string", required: false }
