@@ -584,7 +584,7 @@
         </ul>
       </div>
       <div class="reveal">
-        <form id="quoteForm" name="contact-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <form id="quoteForm" name="contact-request" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
           <input type="hidden" name="form-name" value="contact-request">
           <p class="honeypot" style="position:absolute;left:-9999px;"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="row2">
@@ -592,7 +592,7 @@
             <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
           </div>
           <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-          <div><label for="address">Property Address</label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="Start typing your address…"></div>
+          <div><label for="address">Property Address</label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street, City, ZIP"></div>
           <div>
             <label for="ptype">Project Type</label>
             <select id="ptype" name="project_type">
@@ -991,46 +991,19 @@
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var form = e.target;
-    var submitBtn = document.getElementById('submitBtn');
-    var fnote = document.getElementById('fnote');
-    var v = function(id){ return document.getElementById(id).value; };
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-
-    var formData = new FormData(form);
-
-    fetch('/', {
-      method: 'POST',
-      body: formData
-    })
-    .then(function(response){
-      if(!response.ok) throw new Error('Submission failed');
-      form.style.display = 'none';
-      fnote.innerHTML = '<strong style="color:var(--ink);">Thank you — your request has been sent.</strong> We respond within one business day. You can also reach us directly at <a href="tel:3108445101">(310) 844‑5101</a>.';
-    })
-    .catch(function(){
-      // Network or form-handling issue — fall back to a pre-filled email
-      // the visitor can send from whatever mail app or webmail they use.
-      var subject = encodeURIComponent('Consultation Request — ' + v('ptype'));
-      var body = encodeURIComponent(
-        'Name: ' + v('name') + '\n' +
-        'Phone: ' + v('phone') + '\n' +
-        'Email: ' + v('email') + '\n' +
-        'Address: ' + v('address') + '\n' +
-        'Project Type: ' + v('ptype') + '\n\n' +
-        'Details:\n' + v('msg')
-      );
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Request';
-      fnote.innerHTML = 'We could not submit the form automatically. Please email us directly at ' +
-        '<a href="mailto:info@dreamhavenconstruction.com?subject=' + subject + '&body=' + body + '">info@dreamhavenconstruction.com</a> ' +
-        'or call <a href="tel:3108445101">(310) 844‑5101</a>.';
+  // File-upload forms are more reliable as a real (non-AJAX) submission —
+  // this is Netlify's own recommendation. We let the browser submit
+  // natively to /thank-you.html, and just give quick visual feedback
+  // without blocking or intercepting the submit itself.
+  var quoteForm = document.getElementById('quoteForm');
+  if(quoteForm){
+    quoteForm.addEventListener('submit', function(){
+      setTimeout(function(){
+        var submitBtn = document.getElementById('submitBtn');
+        if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      }, 0);
     });
-  });
+  }
 </script>
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
