@@ -58,6 +58,7 @@
 <style>
   :root{
     --ivory:#FAF8F4;
+    --ivory-rgb:250,248,244;
     --ivory-dim:#F1ECE3;
     --ink:#23271F;
     --ink-mid:#3C4238;
@@ -66,15 +67,18 @@
     --rule-soft:#E9E3D8;
     --gold:#A98A4E;
     --gold-deep:#8A6E38;
+    --font-heading:var(--font-heading);
+    --font-body:var(--font-body);
+    --base-size:16.5px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;background:var(--ivory);color:var(--ink-mid);
-    font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:16.5px;line-height:1.75;
+    font-family:var(--font-body),system-ui,sans-serif;font-weight:300;font-size:var(--base-size);line-height:1.75;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;color:var(--ink);margin:0;line-height:1.12;}
+  h1,h2,h3,h4{font-family:var(--font-heading),Georgia,serif;font-weight:300;color:var(--ink);margin:0;line-height:1.12;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1160px;margin:0 auto;padding:0 34px;}
@@ -84,13 +88,13 @@
   .sheet-no{display:block;font-size:10.5px;font-weight:400;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 
   /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:60;background:rgba(250,248,244,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+  header{position:sticky;top:0;z-index:60;background:rgba(var(--ivory-rgb),0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
   .navrow{display:flex;align-items:center;justify-content:space-between;padding:20px 34px;}
   @media (max-width:640px){.navrow{padding:16px 22px;}}
   .brandmark{display:flex;align-items:center;gap:13px;text-decoration:none;}
   .monogram{width:44px;height:auto;flex-shrink:0;display:block;}
-  .brandname{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);line-height:1.05;}
-  .brandname small{display:block;font-family:'Jost',sans-serif;font-weight:300;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;}
+  .brandname{font-family:var(--font-heading),serif;font-size:22px;color:var(--ink);line-height:1.05;}
+  .brandname small{display:block;font-family:var(--font-body),sans-serif;font-weight:300;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px;}
   nav.links{display:flex;gap:32px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:400;}
   nav.links a{text-decoration:none;color:var(--ink-soft);padding-bottom:4px;border-bottom:1px solid transparent;transition:.2s;}
   nav.links a:hover{color:var(--gold-deep);border-color:var(--gold);}
@@ -103,16 +107,30 @@
   @media (max-width:940px){nav.links,.navcta{display:none;}.burger{display:block;}}
 
   /* ---------- hero ---------- */
-  .hero{padding:100px 0 96px;border-bottom:1px solid var(--rule);}
-  .hero-figure{margin-top:52px;position:relative;}
-  .hero-figure img{width:100%;height:clamp(280px,46vw,520px);object-fit:cover;display:block;}
-  .hero-caption{
-    position:absolute;left:0;bottom:0;background:var(--ivory);border-top:1px solid var(--rule);border-right:1px solid var(--rule);
-    padding:12px 22px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);
+  .hero{padding:90px 0 0;border-bottom:none;}
+  .hero-panel{
+    background:
+      radial-gradient(ellipse at top left, rgba(169,138,78,0.10), transparent 55%),
+      linear-gradient(180deg, var(--ivory-dim) 0%, var(--ivory) 100%);
   }
-  .hero-head{font-size:clamp(2.8rem,6.4vw,5.4rem);max-width:14ch;margin:26px 0 28px;}
+  .hero-cols{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;padding-bottom:64px;}
+  @media (max-width:860px){.hero-cols{grid-template-columns:1fr;gap:40px;}}
+  .hero-graphic-box{border:1px solid var(--rule);background:var(--ivory);padding:18px;}
+  .hero-graphic-box svg{width:100%;height:auto;display:block;}
+  .hero-graphic-caption{
+    margin-top:14px;text-align:center;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  @media (max-width:860px){.hero-graphic-box{max-width:360px;margin:0 auto;}}
+
+  .navcta-phone{font-family:var(--font-heading),serif;font-size:1.05rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .navcta-phone:hover{color:var(--gold-deep);}
+  @media (max-width:940px){.navcta-phone{display:none;}}
+  .hero-head{font-size:clamp(2.4rem,4.6vw,3.9rem);max-width:13ch;margin:26px 0 28px;}
   .hero-head em{font-style:italic;color:var(--gold-deep);}
   .hero-sub{font-size:1.06rem;color:var(--ink-soft);max-width:46ch;margin-bottom:38px;}
+  .hero-meta{margin-top:22px;font-size:.88rem;color:var(--ink-soft);}
+  .hero-meta a{color:var(--gold-deep);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .hero-meta a:hover{color:var(--ink);}
   .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
   .btn{font-size:11.5px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;padding:16px 30px;text-decoration:none;display:inline-block;border:1px solid var(--ink);transition:.2s;}
   .btn-solid{background:var(--ink);color:var(--ivory);}
@@ -125,7 +143,7 @@
   .titleblock .field{padding:24px 26px;border-right:1px solid var(--rule);}
   .titleblock .field:last-child{border-right:none;}
   .titleblock label{display:block;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px;}
-  .titleblock .val{font-family:'Cormorant Garamond',serif;font-size:1.32rem;color:var(--ink);line-height:1.2;}
+  .titleblock .val{font-family:var(--font-heading),serif;font-size:1.32rem;color:var(--ink);line-height:1.2;}
   .titleblock .val a{text-decoration:none;}
   @media (max-width:760px){
     .titleblock{grid-template-columns:1fr 1fr;}
@@ -136,6 +154,7 @@
 
   /* ---------- sections ---------- */
   section{padding:100px 0;border-bottom:1px solid var(--rule);}
+  .section-tint{background:var(--ivory-dim);}
   .section-head{max-width:660px;margin-bottom:58px;}
   .section-head.center{margin:0 auto 58px;text-align:center;}
   h2.section-title{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:0 0 16px;}
@@ -194,7 +213,7 @@
   .adu-top .sqft{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
   .adu-price{padding:26px 30px;border-bottom:1px solid var(--rule-soft);}
   .adu-price .from{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
-  .adu-price .amt{font-family:'Cormorant Garamond',serif;font-size:2.7rem;color:var(--ink);line-height:1;}
+  .adu-price .amt{font-family:var(--font-heading),serif;font-size:2.7rem;color:var(--ink);line-height:1;}
   .adu-features{padding:12px 30px 30px;flex:1;}
   .adu-features ul{margin:0;padding:0;list-style:none;}
   .adu-features li{font-size:.92rem;color:var(--ink-soft);padding:12px 0;border-bottom:1px solid var(--rule-soft);}
@@ -207,7 +226,7 @@
   .why-list{list-style:none;margin:0;padding:0;}
   .why-list li{padding:24px 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:52px 1fr;gap:16px;}
   .why-list li:last-child{border-bottom:1px solid var(--rule);}
-  .why-list .ico{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--gold);line-height:1.3;}
+  .why-list .ico{font-family:var(--font-heading),serif;font-style:italic;font-size:1.35rem;color:var(--gold);line-height:1.3;}
   .why-list h4{font-size:1.35rem;margin-bottom:8px;}
   .why-list p{color:var(--ink-soft);font-size:.93rem;margin:0;}
 
@@ -220,20 +239,30 @@
   @media (max-width:560px){.trajectory{grid-template-columns:1fr 1fr;}}
   .traj-item{padding:26px 20px 26px 0;border-right:1px solid rgba(241,236,227,0.14);border-bottom:1px solid rgba(241,236,227,0.14);}
   .traj-item .t-label{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-  .traj-item .t-name{font-family:'Cormorant Garamond',serif;font-size:1.22rem;color:var(--ivory);line-height:1.2;}
+  .traj-item .t-name{font-family:var(--font-heading),serif;font-size:1.22rem;color:var(--ivory);line-height:1.2;}
 
-  /* ---------- gallery ---------- */
-  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  @media (max-width:760px){.gallery-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:480px){.gallery-grid{grid-template-columns:1fr;}}
-  .gallery-figure{margin:0;border:1px solid var(--rule);overflow:hidden;background:var(--ivory-dim);}
-  .gallery-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.3,1);}
-  .gallery-figure:hover img{transform:scale(1.05);}
-  .gallery-figure figcaption{border-top:1px solid var(--rule);padding:16px 20px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
-  .gallery-figure figcaption .idx{color:var(--gold);}
-  .gallery-slot{aspect-ratio:4/3;border:1px dashed var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:var(--ivory-dim);color:var(--ink-soft);}
-  .gallery-slot .mark{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rule);}
-  .gallery-slot .txt{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;line-height:1.8;}
+  /* ---------- gallery slider ---------- */
+  .slider-wrap{position:relative;display:flex;align-items:center;gap:14px;}
+  .slider-track{
+    display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding-bottom:6px;-webkit-overflow-scrolling:touch;
+  }
+  .slider-track::-webkit-scrollbar{height:5px;}
+  .slider-track::-webkit-scrollbar-thumb{background:var(--rule);}
+  .slide-figure{
+    flex:0 0 auto;width:280px;scroll-snap-align:start;margin:0;border:1px solid var(--rule);overflow:hidden;background:var(--ivory-dim);
+  }
+  @media (max-width:600px){.slide-figure{width:78vw;}}
+  .slide-figure img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s ease;display:block;}
+  .slide-figure:hover img{transform:scale(1.04);}
+  .slide-figure figcaption{border-top:1px solid var(--rule);padding:14px 18px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);}
+  .slide-figure figcaption .idx{color:var(--gold);}
+  .slider-arrow{
+    flex:0 0 auto;width:44px;height:44px;border:1px solid var(--rule);background:var(--ivory);color:var(--ink);
+    font-size:16px;cursor:pointer;transition:.15s;display:flex;align-items:center;justify-content:center;
+  }
+  .slider-arrow:hover{border-color:var(--gold);color:var(--gold-deep);}
+  @media (max-width:600px){.slider-arrow{display:none;}}
 
   /* before/after inside gallery */
   .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;}
@@ -242,11 +271,11 @@
   .compare img,.compare .panel{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .compare .after-layer{clip-path:inset(0 0 0 var(--split,50%));}
   .compare .panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:repeating-linear-gradient(45deg,var(--ivory-dim),var(--ivory-dim) 10px,var(--ivory) 10px,var(--ivory) 20px);color:var(--ink-soft);}
-  .compare .panel .mark{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rule);}
+  .compare .panel .mark{font-family:var(--font-heading),serif;font-size:2rem;color:var(--rule);}
   .compare .panel .txt{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;max-width:20ch;line-height:1.8;}
   .compare .handle{position:absolute;top:0;bottom:0;left:var(--split,50%);width:1px;background:var(--ivory);box-shadow:0 0 0 1px rgba(35,39,31,0.18);pointer-events:none;}
   .compare .knob{position:absolute;top:50%;left:var(--split,50%);transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;pointer-events:none;font-size:11px;color:var(--ink-soft);}
-  .compare .tagl,.compare .tagr{position:absolute;top:14px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;background:rgba(250,248,244,0.92);color:var(--ink);padding:6px 11px;pointer-events:none;}
+  .compare .tagl,.compare .tagr{position:absolute;top:14px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;background:rgba(var(--ivory-rgb),0.92);color:var(--ink);padding:6px 11px;pointer-events:none;}
   .compare .tagl{left:14px;}
   .compare .tagr{right:14px;}
   .compare:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
@@ -254,7 +283,7 @@
 
   /* ---------- testimonials ---------- */
   .testi-wrap{border:1px solid var(--rule);padding:68px 40px;text-align:center;}
-  .testi-wrap .mark{font-family:'Cormorant Garamond',serif;font-size:3.2rem;color:var(--rule);line-height:.6;margin-bottom:22px;}
+  .testi-wrap .mark{font-family:var(--font-heading),serif;font-size:3.2rem;color:var(--rule);line-height:.6;margin-bottom:22px;}
   .testi-wrap p{color:var(--ink-soft);max-width:50ch;margin:0 auto 28px;font-size:1.01rem;}
 
   /* ---------- google reviews ---------- */
@@ -262,16 +291,16 @@
     display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;
     border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:30px 20px;margin-bottom:44px;
   }
-  .rating-summary .score{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--ink);line-height:1;}
+  .rating-summary .score{font-family:var(--font-heading),serif;font-size:3rem;color:var(--ink);line-height:1;}
   .rating-summary .meta{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
   .stars{color:var(--gold);letter-spacing:0.28em;font-size:.95rem;}
   .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   @media (max-width:880px){.reviews-grid{grid-template-columns:1fr 1fr;}}
   @media (max-width:600px){.reviews-grid{grid-template-columns:1fr;}}
-  .review-card{border:1px solid var(--rule);padding:32px 28px;display:flex;flex-direction:column;}
+  .review-card{border:1px solid var(--rule);padding:32px 28px;display:flex;flex-direction:column;background:var(--ivory);}
   .review-card .stars{margin-bottom:18px;}
   .review-card blockquote{
-    margin:0 0 24px;font-family:'Cormorant Garamond',serif;font-size:1.22rem;line-height:1.5;color:var(--ink);flex:1;
+    margin:0 0 24px;font-family:var(--font-heading),serif;font-size:1.22rem;line-height:1.5;color:var(--ink);flex:1;
   }
   .review-card .who{border-top:1px solid var(--rule-soft);padding-top:16px;}
   .review-card .who .nm{font-size:.94rem;color:var(--ink);}
@@ -285,18 +314,23 @@
   .contact-list li{padding:18px 0;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px;align-items:baseline;}
   .contact-list li:last-child{border-bottom:1px solid var(--rule);}
   .contact-list .k{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
-  .contact-list .v{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--ink);text-align:right;}
+  .contact-list .v{font-family:var(--font-heading),serif;font-size:1.2rem;color:var(--ink);text-align:right;}
   .contact-list a{text-decoration:none;}
   .contact-list a:hover{color:var(--gold-deep);}
   form{display:flex;flex-direction:column;gap:22px;}
   label{display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:9px;}
-  input,select,textarea{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;padding:10px 0;font-family:'Jost',sans-serif;font-weight:300;font-size:1rem;color:var(--ink);}
+  input,select,textarea{width:100%;border:none;border-bottom:1px solid var(--rule);background:transparent;padding:10px 0;font-family:var(--font-body),sans-serif;font-weight:300;font-size:1rem;color:var(--ink);}
   input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--gold);}
   textarea{resize:vertical;min-height:80px;}
+  input[type="file"]{border:1px dashed var(--rule);padding:14px;font-size:.88rem;background:var(--ivory-dim);cursor:pointer;}
+  input[type="file"]::file-selector-button{
+    font-family:var(--font-body),sans-serif;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;
+    border:1px solid var(--ink);background:var(--ink);color:var(--ivory);padding:8px 14px;margin-right:12px;cursor:pointer;
+  }
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
   @media (max-width:520px){.row2{grid-template-columns:1fr;}}
   .fnote{font-size:.85rem;color:var(--ink-soft);margin:0;}
-  button.btn{cursor:pointer;font-family:'Jost',sans-serif;align-self:flex-start;}
+  button.btn{cursor:pointer;font-family:var(--font-body),sans-serif;align-self:flex-start;}
 
   /* ---------- footer ---------- */
   footer{padding:60px 0 32px;}
@@ -334,6 +368,7 @@
       <a href="#gallery">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+    <a class="navcta-phone" href="tel:3108445101" data-cms="contact.phoneDisplay">(310) 844‑5101</a>
     <a class="navcta" href="#contact">Book a Consultation</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -350,25 +385,22 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="kicker" data-cms="hero.kicker">Licensed California General Contractor · Southern California</div>
-      <h1 class="hero-head" data-cms="hero.headline">Structural problems other contractors <em>avoid</em> — that's where we start.</h1>
-      <p class="hero-sub" data-cms="hero.subhead">Dream Haven Construction plans and builds kitchen, bathroom, and ADU projects the way an engineer would: feasibility first, permits handled properly, and a schedule you can actually hold us to.</p>
-      <div class="ctas">
-        <a class="btn btn-solid" href="#contact">Book a Consultation</a>
-        <a class="btn btn-ghost" href="#adu">See ADU Pricing</a>
+  <section class="hero hero-panel">
+    <div class="wrap hero-cols">
+      <div class="hero-text">
+        <div class="kicker" data-cms="hero.kicker">Licensed California General Contractor · CSLB 1127356</div>
+        <h1 class="hero-head" data-cms="hero.headline">Turn your garage into a fully finished <em>ADU</em>.</h1>
+        <p class="hero-sub" data-cms="hero.subhead">Dream Haven Construction plans and builds ADU, kitchen, and bathroom projects the way an engineer would: feasibility first, permits handled properly, and a schedule you can actually hold us to.</p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="#contact">Book a Consultation</a>
+          <a class="btn btn-ghost" href="#adu">See ADU Pricing</a>
+        </div>
+        <p class="hero-meta"><a href="#reviews">5.0 ★ Google Reviews</a> &nbsp;·&nbsp; Serving Los Angeles &amp; Southern California</p>
       </div>
-      <div class="titleblock">
-        <div class="field"><label>License</label><div class="val">CSLB 1127356</div></div>
-        <div class="field"><label>Service Area</label><div class="val">Los Angeles &amp; SoCal</div></div>
-        <div class="field"><label>Google Rating</label><div class="val">5.0 ★ · 6 Reviews</div></div>
-        <div class="field"><label>Contact</label><div class="val"><a href="tel:3108445101" data-cms="contact.phoneDisplay">(310) 844‑5101</a></div></div>
+      <div class="hero-graphic-box">
+        <img src="images/hero-adu-split.jpg" data-cms-src="hero.graphicImage" alt="Garage transformed into a finished ADU living space, before and after" style="width:100%;height:auto;display:block;">
+        <div class="hero-graphic-caption" data-cms="hero.graphicCaption">Same Garage, New Purpose</div>
       </div>
-      <figure class="hero-figure">
-        <img src="images/adu-after.jpg" alt="Completed ADU garage conversion by Dream Haven Construction">
-        <figcaption class="hero-caption">Recent Work · Southern California</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -377,102 +409,22 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="sheet-no">Sheet A‑100 · Scope of Work</span>
-        <h2 class="section-title">What we <em>build</em></h2>
-        <p class="section-sub">Every project runs through the same discipline: real feasibility review, coordinated engineering, and a general contractor who is on the job — not just estimating it.</p>
+        <h2 class="section-title" data-cms="services.sectionTitle">What we <em>build</em></h2>
+        <p class="section-sub" data-cms="services.sectionSub">Every project runs through the same discipline: real feasibility review, coordinated engineering, and a general contractor who is on the job — not just estimating it.</p>
       </div>
-      <div class="services-grid reveal">
-
-        <article class="service-card">
-          <div class="svc-thumb"><img src="images/adu-after.jpg" alt="Garage conversion ADU" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="sheet-no">A‑101</span>
-            <h3>ADUs &amp; Garage Conversions</h3>
-            <p>Turnkey garage-to-ADU conversions that add livable square footage, rental income, or equity — designed around your lot and your goals, never a generic floor plan.</p>
-            <div class="taglist"><span class="tag">Design &amp; Permits</span><span class="tag">Electrical / Plumbing</span><span class="tag">Structural</span></div>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="svc-thumb"><img src="images/kitchen-navy-1.jpg" alt="Navy blue kitchen remodel with brass hardware" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="sheet-no">A‑102</span>
-            <h3>Kitchen Remodeling</h3>
-            <p>Full gut-and-rebuild kitchens: layout changes, load-bearing wall removals, panel upgrades, relocated plumbing and electrical, cabinetry and finish coordination.</p>
-            <div class="taglist"><span class="tag">Layout Changes</span><span class="tag">MEP Rework</span><span class="tag">Finishes</span></div>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="svc-thumb"><img src="https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_4630.jpeg" alt="Bathroom remodel" loading="lazy"></div>
-          <div class="svc-body">
-            <span class="sheet-no">A‑103</span>
-            <h3>Bathroom Remodeling</h3>
-            <p>Waterproofing done correctly, efficient plumbing rework, and finish-level detailing — from a single-fixture refresh to a complete reconfiguration.</p>
-            <div class="taglist"><span class="tag">Waterproofing</span><span class="tag">Plumbing</span><span class="tag">Tile &amp; Finish</span></div>
-          </div>
-        </article>
-
-        <article class="service-card no-img">
-          <div class="svc-body">
-            <span class="sheet-no">A‑104</span>
-            <h3>Structural Modifications</h3>
-            <p>Load-bearing wall removals, beam sizing coordination, and structural repairs — always run past a licensed structural engineer before a wall comes down.</p>
-            <div class="taglist"><span class="tag">Engineering-Led</span><span class="tag">Permitted</span></div>
-          </div>
-        </article>
-
-        <article class="service-card no-img">
-          <div class="svc-body">
-            <span class="sheet-no">A‑105</span>
-            <h3>Design &amp; Permit Coordination</h3>
-            <p>Architectural drawings, engineering coordination, and city approvals handled from the start — so the permit is right the first time and the design actually works for how you'll use the space.</p>
-            <div class="taglist"><span class="tag">Architectural Drawings</span><span class="tag">Permit Ready</span></div>
-          </div>
-        </article>
-
-        <article class="service-card no-img">
-          <div class="svc-body">
-            <span class="sheet-no">A‑106</span>
-            <h3>Whole-Home Renovation</h3>
-            <p>Multi-room and whole-house projects that need one contractor holding the permits, the trades, and the schedule together from start to final sign-off.</p>
-            <div class="taglist"><span class="tag">Full Coordination</span><span class="tag">One Point of Contact</span></div>
-          </div>
-        </article>
-
-      </div>
+      <div class="services-grid reveal" id="servicesMount"></div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section id="process">
+  <section id="process" class="section-tint">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="sheet-no">Sheet A‑200 · Sequence</span>
-        <h2 class="section-title">How a project <em>moves</em></h2>
-        <p class="section-sub">Four stages, in this order, every time — so you always know what's next.</p>
+        <h2 class="section-title" data-cms="process.sectionTitle">How a project <em>moves</em></h2>
+        <p class="section-sub" data-cms="process.sectionSub">Four stages, in this order, every time — so you always know what's next.</p>
       </div>
-      <div class="process-row reveal">
-        <div class="process-step">
-          <div class="num">01 · Consultation</div>
-          <h4>Confirm feasibility</h4>
-          <p>We walk the property, understand your goals, and confirm what's genuinely possible before anything is priced.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">02 · Design &amp; Permits</div>
-          <h4>Plans &amp; approvals</h4>
-          <p>We coordinate drawings, engineering, and city approvals so the permit is right the first time.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">03 · Build</div>
-          <h4>Organized execution</h4>
-          <p>A clear schedule, coordinated trades, and consistent updates. No guessing where things stand.</p>
-        </div>
-        <div class="process-step">
-          <div class="num">04 · Inspection</div>
-          <h4>Signed off, done right</h4>
-          <p>Final inspection and close-out, so the work is code-compliant and ready to use — not just finished.</p>
-        </div>
-      </div>
+      <div class="process-row reveal" id="processMount"></div>
     </div>
   </section>
 
@@ -481,8 +433,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="sheet-no">Sheet A‑300 · ADU Product Line</span>
-        <h2 class="section-title">Garage to ADU, in <em>three</em> sizes</h2>
-        <p class="section-sub">A turnkey conversion product with fixed tiers, so pricing conversations start from a real number instead of a guess.</p>
+        <h2 class="section-title" data-cms="adu.sectionTitle">Garage to ADU, in <em>three</em> sizes</h2>
+        <p class="section-sub" data-cms="adu.sectionSub">A turnkey conversion product with fixed tiers, so pricing conversations start from a real number instead of a guess.</p>
       </div>
       <div class="adu-grid reveal">
         <div class="adu-card">
@@ -491,7 +443,7 @@
             <h3>Studio</h3>
             <div class="sqft">Approx. 400 sq ft</div>
           </div>
-          <div class="adu-price"><div class="from">Starting At</div><div class="amt" data-cms="adu.studio.price">$100,000</div></div>
+          <div class="adu-price"><div class="from">Starting At</div><div class="amt" data-cms="adu.studio.price">$120,000</div></div>
           <div class="adu-features">
             <ul>
               <li>Full electrical &amp; plumbing rough-in</li>
@@ -507,7 +459,7 @@
             <h3>One Bedroom</h3>
             <div class="sqft">Approx. 500 sq ft</div>
           </div>
-          <div class="adu-price"><div class="from">Starting At</div><div class="amt" data-cms="adu.oneBed.price">$150,000</div></div>
+          <div class="adu-price"><div class="from">Starting At</div><div class="amt" data-cms="adu.oneBed.price">$170,000</div></div>
           <div class="adu-features">
             <ul>
               <li>Separate bedroom &amp; living area</li>
@@ -534,36 +486,19 @@
           </div>
         </div>
       </div>
-      <p class="adu-note">Pricing reflects the Standard finish at each tier; Premium is available on all three sizes. Final pricing depends on site conditions, utility distance, and finish selections, and is confirmed after a walkthrough.</p>
+      <p class="adu-note" data-cms="adu.note">Pricing reflects the Standard finish at each tier; Premium is available on all three sizes. Final pricing depends on site conditions, utility distance, and finish selections, and is confirmed after a walkthrough.</p>
     </div>
   </section>
 
   <!-- WHY -->
-  <section id="why">
+  <section id="why" class="section-tint">
     <div class="wrap why-wrap">
       <div class="reveal">
         <span class="sheet-no">Sheet A‑400 · Qualifications</span>
-        <h2 class="section-title">Why homeowners choose <em>Dream Haven</em></h2>
-        <p class="section-sub">We don't compete on being the cheapest bid. We compete on the projects that have to be done correctly.</p>
+        <h2 class="section-title" data-cms="why.sectionTitle">Why homeowners choose <em>Dream Haven</em></h2>
+        <p class="section-sub" data-cms="why.sectionSub">We don't compete on being the cheapest bid. We compete on the projects that have to be done correctly.</p>
       </div>
-      <ul class="why-list reveal">
-        <li>
-          <div class="ico">i.</div>
-          <div><h4>Engineering-first solutions</h4><p>Structural work is coordinated with licensed engineers and architects before it is ever priced — not improvised mid-build.</p></div>
-        </li>
-        <li>
-          <div class="ico">ii.</div>
-          <div><h4>Licensed &amp; insured</h4><p>CSLB #1127356, with hands-on experience across electrical, plumbing, drywall, and finish work.</p></div>
-        </li>
-        <li>
-          <div class="ico">iii.</div>
-          <div><h4>Honest, direct communication</h4><p>Clear scopes, realistic timelines, and no surprises. You'll know what's happening and why.</p></div>
-        </li>
-        <li>
-          <div class="ico">iv.</div>
-          <div><h4>One point of contact</h4><p>The owner handles estimating, permitting, and project management personally — never handed off to a call center.</p></div>
-        </li>
-      </ul>
+      <ul class="why-list reveal" id="whyMount"></ul>
     </div>
   </section>
 
@@ -572,17 +507,10 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="sheet-no">The Longer View</span>
-        <h2 class="section-title">Remodeling is the starting point, not the <em>end goal</em></h2>
-        <p class="section-sub">Dream Haven is built to grow from remodeling into a full design-build and real estate development company — the same standards, applied to larger projects, over time.</p>
+        <h2 class="section-title" data-cms="vision.sectionTitle">Remodeling is the starting point, not the <em>end goal</em></h2>
+        <p class="section-sub" data-cms="vision.sectionSub">Dream Haven is built to grow from remodeling into a full design-build and real estate development company — the same standards, applied to larger projects, over time.</p>
       </div>
-      <div class="trajectory reveal">
-        <div class="traj-item"><div class="t-label">Today</div><div class="t-name">Kitchens, Baths &amp; ADUs</div></div>
-        <div class="traj-item"><div class="t-label">Next</div><div class="t-name">Whole-Home Renovation</div></div>
-        <div class="traj-item"><div class="t-label">Next</div><div class="t-name">Design-Build Services</div></div>
-        <div class="traj-item"><div class="t-label">Ahead</div><div class="t-name">Fix &amp; Flip</div></div>
-        <div class="traj-item"><div class="t-label">Ahead</div><div class="t-name">Ground-Up Homes</div></div>
-        <div class="traj-item"><div class="t-label">Long Term</div><div class="t-name">Multifamily Development</div></div>
-      </div>
+      <div class="trajectory reveal" id="visionMount"></div>
     </div>
   </section>
 
@@ -591,8 +519,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="sheet-no">Sheet A‑500 · Completed Work</span>
-        <h2 class="section-title">Recent <em>projects</em></h2>
-        <p class="section-sub">Drag the handle on a comparison to see where the project started. More before/after sets are added as current jobs wrap.</p>
+        <h2 class="section-title" data-cms="gallery.sectionTitle">Recent <em>projects</em></h2>
+        <p class="section-sub" data-cms="gallery.sectionSub">Drag the handle on a comparison to see where the project started. More before/after sets are added as current jobs wrap.</p>
       </div>
 
       <div class="ba-row reveal">
@@ -611,37 +539,16 @@
       </div>
       <p class="ba-hint">Drag · or use arrow keys</p>
 
-      <div class="gallery-grid reveal">
-        <figure class="gallery-figure">
-          <img src="images/adu-after.jpg" alt="Garage conversion ADU project" loading="lazy">
-          <figcaption><span>ADU / Garage Conversion</span><span class="idx">01</span></figcaption>
-        </figure>
-        <figure class="gallery-figure">
-          <img src="images/kitchen-navy-2.jpg" alt="Kitchen remodel with farmhouse sink and brass fixtures" loading="lazy">
-          <figcaption><span>Kitchen Remodel</span><span class="idx">02</span></figcaption>
-        </figure>
-        <figure class="gallery-figure">
-          <img src="https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_4630.jpeg" alt="Bathroom remodel project" loading="lazy">
-          <figcaption><span>Bathroom Remodel</span><span class="idx">03</span></figcaption>
-        </figure>
-        <figure class="gallery-figure">
-          <img src="https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_2213.jpeg" alt="Completed residential remodel" loading="lazy">
-          <figcaption><span>Residential Remodel</span><span class="idx">04</span></figcaption>
-        </figure>
-        <figure class="gallery-figure">
-          <img src="images/bathroom-vanity.jpg" alt="Bathroom remodel with black vanity and brass fixtures" loading="lazy">
-          <figcaption><span>Bathroom Remodel</span><span class="idx">05</span></figcaption>
-        </figure>
-        <figure class="gallery-figure">
-          <img src="images/kitchen-navy-4.jpg" alt="Kitchen remodel with navy island and marble countertops" loading="lazy">
-          <figcaption><span>Kitchen Remodel</span><span class="idx">06</span></figcaption>
-        </figure>
+      <div class="slider-wrap reveal">
+        <button class="slider-arrow slider-arrow-left" id="galPrev" aria-label="Previous projects">←</button>
+        <div class="slider-track" id="galTrack"></div>
+        <button class="slider-arrow slider-arrow-right" id="galNext" aria-label="Next projects">→</button>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section>
+  <section id="reviews" class="section-tint">
     <div class="wrap">
       <div class="section-head center reveal">
         <span class="sheet-no">Sheet A‑600 · Client Feedback</span>
@@ -677,16 +584,18 @@
         </ul>
       </div>
       <div class="reveal">
-        <form id="quoteForm">
+        <form id="quoteForm" name="contact-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="contact-request">
+          <p class="honeypot" style="position:absolute;left:-9999px;"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="row2">
-            <div><label for="name">Name</label><input id="name" type="text" required></div>
-            <div><label for="phone">Phone</label><input id="phone" type="tel" required></div>
+            <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
           </div>
-          <div><label for="email">Email</label><input id="email" type="email" required></div>
-          <div><label for="address">Property Address</label><input id="address" type="text" placeholder="Street, City, ZIP"></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="address">Property Address</label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="Start typing your address…"></div>
           <div>
             <label for="ptype">Project Type</label>
-            <select id="ptype">
+            <select id="ptype" name="project_type">
               <option>ADU / Garage Conversion</option>
               <option>Kitchen Remodel</option>
               <option>Bathroom Remodel</option>
@@ -694,9 +603,13 @@
               <option>Structural / Other</option>
             </select>
           </div>
-          <div><label for="msg">Project Details</label><textarea id="msg" placeholder="Tell us about the space and what you're hoping to do."></textarea></div>
-          <button class="btn btn-solid" type="submit">Send Request</button>
-          <p class="fnote" id="fnote">We respond within one business day.</p>
+          <div><label for="msg">Project Details</label><textarea id="msg" name="message" placeholder="Tell us about the space and what you're hoping to do."></textarea></div>
+          <div>
+            <label for="photos">Attach Photos (optional)</label>
+            <input id="photos" name="photos" type="file" accept="image/*" multiple>
+          </div>
+          <button class="btn btn-solid" type="submit" id="submitBtn">Send Request</button>
+          <p class="fnote" id="fnote">We respond within one business day. You can also reach us directly at <a href="tel:3108445101">(310) 844‑5101</a> or <a href="mailto:info@dreamhavenconstruction.com">info@dreamhavenconstruction.com</a>.</p>
         </form>
       </div>
     </div>
@@ -712,7 +625,7 @@
           <img class="monogram" src="images/logo-mark.png" alt="Dream Haven Construction logo">
           <span class="brandname">Dream Haven<small>Construction</small></span>
         </a>
-        <p>Licensed California General Contractor specializing in kitchen, bathroom, and ADU remodeling across Los Angeles and Southern California.</p>
+        <p data-cms="footer.description">Licensed California General Contractor specializing in kitchen, bathroom, and ADU remodeling across Los Angeles and Southern California.</p>
         <p style="margin-top:12px;">West Hollywood, CA</p>
       </div>
       <div class="foot-links">
@@ -745,17 +658,204 @@
      that file hasn't loaded yet or is unreachable, so the page always
      renders real content immediately.
      ================================================================ */
-  var GOOGLE_RATING = { score: 5.0, count: 6 };
+  var GOOGLE_RATING = { score: 5.0, count: 7 };
   var GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Dream+Haven+Construction+West+Hollywood";
   var DEFAULT_REVIEWS = [
+    { stars: 5, text: "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation. Ayman handled all of the construction and renovation work, and we couldn't be happier with the results. From the beginning, Ayman was professional, dependable, responsive, and very attentive to the details.", name: "Cheryl Scott", project: "Kitchen Renovation" },
     { stars: 5, text: "I had a great experience working with Ayman on a kitchen remodeling project. He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.", name: "Andrei Den", project: "Kitchen Remodel" },
     { stars: 5, text: "Ayman is amazing! He is on time, brings everything he needs, and explains the job. I learned more about my kitchen appliances than I knew before! Great work on electrical also. Plumbing and walls also handled like a pro. Highly recommend this company!!", name: "Christel Hachigian", project: "Kitchen · Electrical · Plumbing" },
     { stars: 5, text: "I recently had a kitchen remodeling and used Dream Haven Construction for some of the work. I am very happy with the results and the professionalism that Ayman showed.", name: "Sofia Sosa", project: "Kitchen Remodel" },
     { stars: 5, text: "Very thoughtful and caring work. He went out of the way to find parts that weren't entirely needed and did it with grace. Great job all around! Highly recommend for appliance install and set up!", name: "Scott Olsen", project: "Appliance Install" },
-    { stars: 5, text: "Great contractor. Knows what he's doing. My job looks great.", name: "William Preston", project: "Reasonable Price" },
-    { stars: 5, text: "I love my new bathroom!! Thank you Dream Haven!", name: "Louise Copp", project: "Bathroom Remodel" }
+    { stars: 5, text: "Great contractor. Knows what he's doing. My job looks great.", name: "William Preston", project: "Reasonable Price" }
   ];
   var GOOGLE_REVIEWS = DEFAULT_REVIEWS;
+
+  var DEFAULT_SERVICES = [
+    { sheetNo:"A‑101", title:"ADUs &amp; Garage Conversions", description:"Turnkey garage-to-ADU conversions that add livable square footage, rental income, or equity — designed around your lot and your goals, never a generic floor plan.", tags:["Design &amp; Permits","Electrical / Plumbing","Structural"], image:"images/proj-adu-01.jpg", imageAlt:"ADU exterior with cedar siding at dusk" },
+    { sheetNo:"A‑102", title:"Kitchen Remodeling", description:"Full gut-and-rebuild kitchens: layout changes, load-bearing wall removals, panel upgrades, relocated plumbing and electrical, cabinetry and finish coordination.", tags:["Layout Changes","MEP Rework","Finishes"], image:"images/proj-kit-07.jpg", imageAlt:"Kitchen remodel with sage green cabinetry" },
+    { sheetNo:"A‑103", title:"Bathroom Remodeling", description:"Waterproofing done correctly, efficient plumbing rework, and finish-level detailing — from a single-fixture refresh to a complete reconfiguration.", tags:["Waterproofing","Plumbing","Tile &amp; Finish"], image:"images/proj-bath-04.jpg", imageAlt:"Bathroom remodel with gold fixtures and soaking tub" },
+    { sheetNo:"A‑104", title:"Structural Modifications", description:"Load-bearing wall removals, beam sizing coordination, and structural repairs — always run past a licensed structural engineer before a wall comes down.", tags:["Engineering-Led","Permitted"], image:"", imageAlt:"" },
+    { sheetNo:"A‑105", title:"Design &amp; Permit Coordination", description:"Architectural drawings, engineering coordination, and city approvals handled from the start — so the permit is right the first time and the design actually works for how you'll use the space.", tags:["Architectural Drawings","Permit Ready"], image:"", imageAlt:"" },
+    { sheetNo:"A‑106", title:"Whole-Home Renovation", description:"Multi-room and whole-house projects that need one contractor holding the permits, the trades, and the schedule together from start to final sign-off.", tags:["Full Coordination","One Point of Contact"], image:"", imageAlt:"" }
+  ];
+
+  function renderServices(list){
+    var mount = document.getElementById('servicesMount');
+    if(!mount) return;
+    var html = '';
+    (list || DEFAULT_SERVICES).forEach(function(s){
+      var tagsHtml = (s.tags || []).map(function(t){ return '<span class="tag">' + t + '</span>'; }).join('');
+      html += '<article class="service-card' + (s.image ? '' : ' no-img') + '">' +
+        (s.image ? '<div class="svc-thumb"><img src="' + s.image + '" alt="' + (s.imageAlt || '') + '" loading="lazy"></div>' : '') +
+        '<div class="svc-body">' +
+          '<span class="sheet-no">' + s.sheetNo + '</span>' +
+          '<h3>' + s.title + '</h3>' +
+          '<p>' + s.description + '</p>' +
+          '<div class="taglist">' + tagsHtml + '</div>' +
+        '</div>' +
+      '</article>';
+    });
+    mount.innerHTML = html;
+  }
+
+  var DEFAULT_PROCESS = [
+    { num:"01 · Consultation", title:"Confirm feasibility", description:"We walk the property, understand your goals, and confirm what's genuinely possible before anything is priced." },
+    { num:"02 · Design &amp; Permits", title:"Plans &amp; approvals", description:"We coordinate drawings, engineering, and city approvals so the permit is right the first time." },
+    { num:"03 · Build", title:"Organized execution", description:"A clear schedule, coordinated trades, and consistent updates. No guessing where things stand." },
+    { num:"04 · Inspection", title:"Signed off, done right", description:"Final inspection and close-out, so the work is code-compliant and ready to use — not just finished." }
+  ];
+
+  function renderProcess(list){
+    var mount = document.getElementById('processMount');
+    if(!mount) return;
+    var html = '';
+    (list || DEFAULT_PROCESS).forEach(function(s){
+      html += '<div class="process-step">' +
+        '<div class="num">' + s.num + '</div>' +
+        '<h4>' + s.title + '</h4>' +
+        '<p>' + s.description + '</p>' +
+      '</div>';
+    });
+    mount.innerHTML = html;
+  }
+
+  var DEFAULT_WHY = [
+    { roman:"i.", title:"Engineering-first solutions", description:"Structural work is coordinated with licensed engineers and architects before it is ever priced — not improvised mid-build." },
+    { roman:"ii.", title:"Licensed &amp; insured", description:"CSLB #1127356, with hands-on experience across electrical, plumbing, drywall, and finish work." },
+    { roman:"iii.", title:"Honest, direct communication", description:"Clear scopes, realistic timelines, and no surprises. You'll know what's happening and why." },
+    { roman:"iv.", title:"One point of contact", description:"The owner handles estimating, permitting, and project management personally — never handed off to a call center." }
+  ];
+
+  function renderWhy(list){
+    var mount = document.getElementById('whyMount');
+    if(!mount) return;
+    var html = '';
+    (list || DEFAULT_WHY).forEach(function(s){
+      html += '<li><div class="ico">' + s.roman + '</div><div><h4>' + s.title + '</h4><p>' + s.description + '</p></div></li>';
+    });
+    mount.innerHTML = html;
+  }
+
+  var DEFAULT_TRAJECTORY = [
+    { label:"Today", name:"Kitchens, Baths &amp; ADUs" },
+    { label:"Next", name:"Whole-Home Renovation" },
+    { label:"Next", name:"Design-Build Services" },
+    { label:"Ahead", name:"Fix &amp; Flip" },
+    { label:"Ahead", name:"Ground-Up Homes" },
+    { label:"Long Term", name:"Multifamily Development" }
+  ];
+
+  function renderVision(list){
+    var mount = document.getElementById('visionMount');
+    if(!mount) return;
+    var html = '';
+    (list || DEFAULT_TRAJECTORY).forEach(function(s){
+      html += '<div class="traj-item"><div class="t-label">' + s.label + '</div><div class="t-name">' + s.name + '</div></div>';
+    });
+    mount.innerHTML = html;
+  }
+
+  var DEFAULT_GALLERY = [
+    { image:"images/proj-kit-06.jpg", alt:"Light wood kitchen with dining table", caption:"Kitchen Remodel" },
+    { image:"images/proj-adu-04.jpg", alt:"ADU living room interior", caption:"ADU / Garage Conversion" },
+    { image:"images/proj-bath-05.jpg", alt:"Cream tile bathroom with brass tub fixtures", caption:"Bathroom Remodel" },
+    { image:"images/proj-bath-04.jpg", alt:"Bathroom with wood vanity and walk-in shower", caption:"Bathroom Remodel" },
+    { image:"images/proj-kit-05.jpg", alt:"Light wood kitchen with dining nook", caption:"Kitchen Remodel" },
+    { image:"images/proj-kit-04.jpg", alt:"Cream kitchen with brass hardware", caption:"Kitchen Remodel" },
+    { image:"images/proj-bath-03.jpg", alt:"Neutral bathroom with brass fixtures", caption:"Bathroom Remodel" },
+    { image:"images/proj-kit-03.jpg", alt:"Kitchen remodel with black cabinetry and bar seating", caption:"Kitchen Remodel" },
+    { image:"images/proj-bath-02.jpg", alt:"Moody bathroom with black vanity", caption:"Bathroom Remodel" },
+    { image:"images/proj-adu-03.jpg", alt:"Modern ADU exterior with flat roof", caption:"ADU / Garage Conversion" },
+    { image:"images/proj-kit-02.jpg", alt:"Kitchen remodel with sage green cabinets", caption:"Kitchen Remodel" },
+    { image:"images/proj-kit-01.jpg", alt:"Kitchen remodel with green cabinetry", caption:"Kitchen Remodel" },
+    { image:"images/proj-bath-01.jpg", alt:"Bathroom remodel with green vanity", caption:"Bathroom Remodel" },
+    { image:"images/proj-adu-02.jpg", alt:"ADU exterior with white stucco and open door", caption:"ADU / Garage Conversion" },
+    { image:"images/proj-adu-01.jpg", alt:"ADU exterior with cedar siding at dusk", caption:"ADU / Garage Conversion" },
+    { image:"images/kitchen-navy-4.jpg", alt:"Kitchen remodel with navy island and marble countertops", caption:"Kitchen Remodel" },
+    { image:"images/bathroom-vanity.jpg", alt:"Bathroom remodel with black vanity and brass fixtures", caption:"Bathroom Remodel" },
+    { image:"https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_2213.jpeg", alt:"Completed residential remodel", caption:"Residential Remodel" },
+    { image:"https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_4630.jpeg", alt:"Bathroom remodel project", caption:"Bathroom Remodel" },
+    { image:"images/kitchen-navy-2.jpg", alt:"Kitchen remodel with farmhouse sink and brass fixtures", caption:"Kitchen Remodel" },
+    { image:"images/adu-after.jpg", alt:"Garage conversion ADU project", caption:"ADU / Garage Conversion" }
+  ];
+
+  function renderGallery(list){
+    var track = document.getElementById('galTrack');
+    if(!track) return;
+    var html = '';
+    (list || DEFAULT_GALLERY).forEach(function(s, i){
+      var idx = String(i + 1).padStart(2, '0');
+      html += '<figure class="slide-figure">' +
+        '<img src="' + s.image + '" alt="' + (s.alt || '') + '" loading="lazy">' +
+        '<figcaption><span>' + s.caption + '</span><span class="idx">' + idx + '</span></figcaption>' +
+      '</figure>';
+    });
+    track.innerHTML = html;
+  }
+
+  // Design settings: fonts, accent color, base text size — CMS-controlled
+  var FONT_STACKS = {
+    "Cormorant Garamond": "'Cormorant Garamond', Georgia, serif",
+    "Playfair Display": "'Playfair Display', Georgia, serif",
+    "Libre Baskerville": "'Libre Baskerville', Georgia, serif",
+    "Jost": "'Jost', system-ui, sans-serif",
+    "Inter": "'Inter', system-ui, sans-serif",
+    "Work Sans": "'Work Sans', system-ui, sans-serif"
+  };
+  var TEXT_SCALES = { small: "15.5px", medium: "16.5px", large: "18px" };
+  var BG_THEMES = {
+    bright: { ivory:"#FAF8F4", ivoryDim:"#F1ECE3", rule:"#DCD5C7", ruleSoft:"#E9E3D8" },
+    sand:   { ivory:"#F0E6D2", ivoryDim:"#E8DABF", rule:"#D2BE95", ruleSoft:"#DECBA8" },
+    stone:  { ivory:"#EAE3D6", ivoryDim:"#DFD5C2", rule:"#C7B99E", ruleSoft:"#D3C7AC" }
+  };
+  function hexToRgbString(hex){
+    var h = hex.replace('#','');
+    var r = parseInt(h.substring(0,2),16), g = parseInt(h.substring(2,4),16), b = parseInt(h.substring(4,6),16);
+    return r + ',' + g + ',' + b;
+  }
+
+  function applyDesign(design){
+    if(!design) return;
+    var root = document.documentElement;
+    if(design.headingFont){
+      root.style.setProperty('--font-heading', FONT_STACKS[design.headingFont] || ("'" + design.headingFont + "'"));
+    }
+    if(design.bodyFont){
+      root.style.setProperty('--font-body', FONT_STACKS[design.bodyFont] || ("'" + design.bodyFont + "'"));
+    }
+    if(design.accentColor){
+      root.style.setProperty('--gold', design.accentColor);
+      root.style.setProperty('--gold-deep', design.accentColor);
+    }
+    if(design.textScale && TEXT_SCALES[design.textScale]){
+      root.style.setProperty('--base-size', TEXT_SCALES[design.textScale]);
+    }
+    if(design.bgTheme && BG_THEMES[design.bgTheme]){
+      var t = BG_THEMES[design.bgTheme];
+      root.style.setProperty('--ivory', t.ivory);
+      root.style.setProperty('--ivory-rgb', hexToRgbString(t.ivory));
+      root.style.setProperty('--ivory-dim', t.ivoryDim);
+      root.style.setProperty('--rule', t.rule);
+      root.style.setProperty('--rule-soft', t.ruleSoft);
+    }
+    // Load the chosen Google Fonts if they differ from the defaults already linked
+    var families = [];
+    if(design.headingFont && design.headingFont !== 'Cormorant Garamond') families.push(design.headingFont.replace(/ /g,'+') + ':ital,wght@0,300;0,400;0,500;1,300;1,400');
+    if(design.bodyFont && design.bodyFont !== 'Jost') families.push(design.bodyFont.replace(/ /g,'+') + ':wght@300;400;500');
+    if(families.length){
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=' + families.join('&family=') + '&display=swap';
+      document.head.appendChild(link);
+    }
+  }
+
+  renderServices();
+  renderProcess();
+  renderWhy();
+  renderVision();
+  renderGallery();
+  renderReviews();
 
   function renderReviews(){
     var mount = document.getElementById('reviewsMount');
@@ -770,7 +870,7 @@
           '<div class="score">' + GOOGLE_RATING.score.toFixed(1) + '</div>' +
           '<div>' +
             '<div class="stars">' + starRow(Math.round(GOOGLE_RATING.score)) + '</div>' +
-            '<div class="meta">' + GOOGLE_RATING.count + ' Google review' + (GOOGLE_RATING.count === 1 ? '' : 's') + '</div>' +
+            '<div class="meta">Rating on Google</div>' +
           '</div>' +
         '</div>';
     }
@@ -804,7 +904,6 @@
 
     mount.innerHTML = html;
   }
-  renderReviews();
 
   // Pull live content from the CMS-edited JSON file, if present, and
   // re-render. The page above already shows real content immediately,
@@ -819,10 +918,22 @@
         path.forEach(function(k){ v = v && v[k]; });
         if(v) el.innerHTML = v;
       });
+      document.querySelectorAll('[data-cms-src]').forEach(function(el){
+        var path = el.getAttribute('data-cms-src').split('.');
+        var v = data;
+        path.forEach(function(k){ v = v && v[k]; });
+        if(v) el.src = v;
+      });
       if(data.rating) GOOGLE_RATING = data.rating;
       if(data.reviewUrl) GOOGLE_REVIEW_URL = data.reviewUrl;
       if(data.reviews && data.reviews.length) GOOGLE_REVIEWS = data.reviews;
       renderReviews();
+      if(data.services && data.services.items && data.services.items.length) renderServices(data.services.items);
+      if(data.process && data.process.items && data.process.items.length) renderProcess(data.process.items);
+      if(data.why && data.why.items && data.why.items.length) renderWhy(data.why.items);
+      if(data.vision && data.vision.trajectory && data.vision.trajectory.length) renderVision(data.vision.trajectory);
+      if(data.gallery && data.gallery.items && data.gallery.items.length) renderGallery(data.gallery.items);
+      if(data.design) applyDesign(data.design);
     })
     .catch(function(){ /* offline or file missing — defaults already rendered */ });
 
@@ -857,6 +968,20 @@
     });
   });
 
+  // gallery slider arrows
+  (function(){
+    var track = document.getElementById('galTrack');
+    var prev = document.getElementById('galPrev');
+    var next = document.getElementById('galNext');
+    if(!track || !prev || !next) return;
+    function scrollAmount(){
+      var card = track.querySelector('.slide-figure');
+      return card ? card.getBoundingClientRect().width + 18 : 300;
+    }
+    prev.addEventListener('click', function(){ track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }); });
+    next.addEventListener('click', function(){ track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }); });
+  })();
+
   if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
@@ -868,18 +993,43 @@
 
   document.getElementById('quoteForm').addEventListener('submit', function(e){
     e.preventDefault();
+    var form = e.target;
+    var submitBtn = document.getElementById('submitBtn');
+    var fnote = document.getElementById('fnote');
     var v = function(id){ return document.getElementById(id).value; };
-    var subject = encodeURIComponent('Consultation Request — ' + v('ptype'));
-    var body = encodeURIComponent(
-      'Name: ' + v('name') + '\n' +
-      'Phone: ' + v('phone') + '\n' +
-      'Email: ' + v('email') + '\n' +
-      'Address: ' + v('address') + '\n' +
-      'Project Type: ' + v('ptype') + '\n\n' +
-      'Details:\n' + v('msg')
-    );
-    window.location.href = 'mailto:info@dreamhavenconstruction.com?subject=' + subject + '&body=' + body;
-    document.getElementById('fnote').textContent = 'Opening your email app to send this request…';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    var formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(response){
+      if(!response.ok) throw new Error('Submission failed');
+      form.style.display = 'none';
+      fnote.innerHTML = '<strong style="color:var(--ink);">Thank you — your request has been sent.</strong> We respond within one business day. You can also reach us directly at <a href="tel:3108445101">(310) 844‑5101</a>.';
+    })
+    .catch(function(){
+      // Network or form-handling issue — fall back to a pre-filled email
+      // the visitor can send from whatever mail app or webmail they use.
+      var subject = encodeURIComponent('Consultation Request — ' + v('ptype'));
+      var body = encodeURIComponent(
+        'Name: ' + v('name') + '\n' +
+        'Phone: ' + v('phone') + '\n' +
+        'Email: ' + v('email') + '\n' +
+        'Address: ' + v('address') + '\n' +
+        'Project Type: ' + v('ptype') + '\n\n' +
+        'Details:\n' + v('msg')
+      );
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Request';
+      fnote.innerHTML = 'We could not submit the form automatically. Please email us directly at ' +
+        '<a href="mailto:info@dreamhavenconstruction.com?subject=' + subject + '&body=' + body + '">info@dreamhavenconstruction.com</a> ' +
+        'or call <a href="tel:3108445101">(310) 844‑5101</a>.';
+    });
   });
 </script>
 

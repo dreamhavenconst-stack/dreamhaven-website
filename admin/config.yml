@@ -9,32 +9,120 @@ collections:
   - name: "site"
     label: "Website Content"
     files:
-      - name: "site-data"
-        label: "Site Content"
+
+      - name: "design"
+        label: "🎨 Design & Typography"
         file: "content/site-data.json"
         fields:
+          - label: "Design Settings"
+            name: "design"
+            widget: "object"
+            fields:
+              - label: "Heading Font"
+                name: "headingFont"
+                widget: "select"
+                options: ["Cormorant Garamond", "Playfair Display", "Libre Baskerville"]
+                default: "Cormorant Garamond"
+                hint: "Used for all headlines and section titles."
+              - label: "Body Font"
+                name: "bodyFont"
+                widget: "select"
+                options: ["Jost", "Inter", "Work Sans"]
+                default: "Jost"
+                hint: "Used for paragraphs, labels, and buttons."
+              - label: "Accent Color"
+                name: "accentColor"
+                widget: "color"
+                default: "#A98A4E"
+                hint: "The gold/brass accent used for links, italics, and highlights site-wide."
+              - label: "Text Size"
+                name: "textScale"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium (Default)", value: "medium" }
+                  - { label: "Large", value: "large" }
+                default: "medium"
+              - label: "Background Warmth"
+                name: "bgTheme"
+                widget: "select"
+                options:
+                  - { label: "Bright Ivory (Whitest)", value: "bright" }
+                  - { label: "Warm Sand", value: "sand" }
+                  - { label: "Soft Stone (Warmest)", value: "stone" }
+                default: "bright"
+                hint: "Controls how white or warm the overall page background feels."
 
-          - label: "Hero Section"
+      - name: "hero"
+        label: "🏠 Hero (Top of Homepage)"
+        file: "content/site-data.json"
+        fields:
+          - label: "Hero"
             name: "hero"
             widget: "object"
             fields:
               - { label: "Eyebrow Text", name: "kicker", widget: "string" }
               - { label: "Headline (use <em>word</em> for gold italic emphasis)", name: "headline", widget: "string" }
               - { label: "Subheadline", name: "subhead", widget: "text" }
+              - { label: "Graphic Image", name: "graphicImage", widget: "image" }
+              - { label: "Graphic Caption", name: "graphicCaption", widget: "string" }
 
-          - label: "Contact Info"
-            name: "contact"
+      - name: "services"
+        label: "🛠️ Services Section"
+        file: "content/site-data.json"
+        fields:
+          - label: "Services"
+            name: "services"
             widget: "object"
             fields:
-              - { label: "Phone (display)", name: "phoneDisplay", widget: "string" }
-              - { label: "Phone (digits only, for tel: links)", name: "phoneHref", widget: "string" }
-              - { label: "Office Address", name: "address", widget: "string" }
-              - { label: "License Number", name: "license", widget: "string" }
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
+              - label: "Service Cards"
+                name: "items"
+                widget: "list"
+                label_singular: "Service"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Sheet Number (e.g. A‑101)", name: "sheetNo", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Tags"
+                    name: "tags"
+                    widget: "list"
+                    field: { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Photo (optional — leave blank for no photo)", name: "image", widget: "image", required: false }
+                  - { label: "Photo Alt Text", name: "imageAlt", widget: "string", required: false }
 
+      - name: "process"
+        label: "📋 Process Section"
+        file: "content/site-data.json"
+        fields:
+          - label: "Process"
+            name: "process"
+            widget: "object"
+            fields:
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
+              - label: "Steps"
+                name: "items"
+                widget: "list"
+                label_singular: "Step"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Number & Label (e.g. 01 · Consultation)", name: "num", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+      - name: "adu"
+        label: "💰 ADU Pricing Section"
+        file: "content/site-data.json"
+        fields:
           - label: "ADU Pricing"
             name: "adu"
             widget: "object"
             fields:
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
               - label: "Studio (~400 sq ft)"
                 name: "studio"
                 widget: "object"
@@ -47,16 +135,106 @@ collections:
                 name: "oneBedDen"
                 widget: "object"
                 fields: [{ label: "Starting Price", name: "price", widget: "string" }]
+              - { label: "Footnote", name: "note", widget: "text" }
 
+      - name: "why"
+        label: "✅ Why Us Section"
+        file: "content/site-data.json"
+        fields:
+          - label: "Why Us"
+            name: "why"
+            widget: "object"
+            fields:
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
+              - label: "Reasons"
+                name: "items"
+                widget: "list"
+                label_singular: "Reason"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Roman Numeral (i. / ii. / iii. / iv.)", name: "roman", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+      - name: "vision"
+        label: "🔭 Long-Term Vision Section"
+        file: "content/site-data.json"
+        fields:
+          - label: "Vision"
+            name: "vision"
+            widget: "object"
+            fields:
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
+              - label: "Growth Trajectory"
+                name: "trajectory"
+                widget: "list"
+                label_singular: "Stage"
+                summary: "{{label}} — {{name}}"
+                fields:
+                  - { label: "Label (Today / Next / Ahead / Long Term)", name: "label", widget: "string" }
+                  - { label: "Name", name: "name", widget: "string" }
+
+      - name: "gallery"
+        label: "📷 Recent Projects Photos"
+        file: "content/site-data.json"
+        fields:
+          - label: "Gallery"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Section Title (use <em>word</em> for emphasis)", name: "sectionTitle", widget: "string" }
+              - { label: "Section Subtitle", name: "sectionSub", widget: "text" }
+              - label: "Project Photos (drag to reorder)"
+                name: "items"
+                widget: "list"
+                label_singular: "Photo"
+                summary: "{{caption}}"
+                fields:
+                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Alt Text (for accessibility & SEO)", name: "alt", widget: "string" }
+                  - { label: "Caption", name: "caption", widget: "string" }
+
+      - name: "contact"
+        label: "📞 Contact Info"
+        file: "content/site-data.json"
+        fields:
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Phone (display)", name: "phoneDisplay", widget: "string" }
+              - { label: "Phone (digits only, for tel: links)", name: "phoneHref", widget: "string" }
+              - { label: "Office Address", name: "address", widget: "string" }
+              - { label: "License Number", name: "license", widget: "string" }
+
+      - name: "footer"
+        label: "📄 Footer"
+        file: "content/site-data.json"
+        fields:
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Company Description", name: "description", widget: "text" }
+
+      - name: "rating"
+        label: "⭐ Google Rating Summary"
+        file: "content/site-data.json"
+        fields:
           - label: "Google Rating Summary"
             name: "rating"
             widget: "object"
             fields:
               - { label: "Average Score (e.g. 5.0)", name: "score", widget: "number", value_type: "float" }
               - { label: "Number of Reviews", name: "count", widget: "number", value_type: "int" }
-
           - { label: "Google Review Link (button destination)", name: "reviewUrl", widget: "string" }
 
+      - name: "reviews"
+        label: "💬 Reviews"
+        file: "content/site-data.json"
+        fields:
           - label: "Reviews"
             name: "reviews"
             widget: "list"

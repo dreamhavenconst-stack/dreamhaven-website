@@ -1,16 +1,128 @@
 {
+  "design": {
+    "headingFont": "Cormorant Garamond",
+    "bodyFont": "Jost",
+    "accentColor": "#A98A4E",
+    "textScale": "medium",
+    "bgTheme": "bright"
+  },
   "hero": {
-    "kicker": "Licensed California General Contractor · Southern California",
-    "headline": "Structural problems other contractors <em>avoid</em> — that's where we start.",
-    "subhead": "Dream Haven Construction plans and builds kitchen, bathroom, and ADU projects the way an engineer would: feasibility first, permits handled properly, and a schedule you can actually hold us to."
+    "kicker": "Licensed California General Contractor · CSLB 1127356",
+    "headline": "Turn your garage into a fully finished <em>ADU</em>.",
+    "subhead": "Dream Haven Construction plans and builds ADU, kitchen, and bathroom projects the way an engineer would: feasibility first, permits handled properly, and a schedule you can actually hold us to.",
+    "graphicImage": "images/hero-adu-split.jpg",
+    "graphicCaption": "Same Garage, New Purpose"
   },
   "contact": {
     "phoneDisplay": "(310) 844-5101",
     "phoneHref": "3108445101",
-    "address": "West Hollywood, CA 90069",
+    "address": "930 Palm Ave, Unit 301, West Hollywood, CA 90069",
     "license": "CSLB #1127356"
   },
+  "services": {
+    "sectionTitle": "What we <em>build</em>",
+    "sectionSub": "Every project runs through the same discipline: real feasibility review, coordinated engineering, and a general contractor who is on the job — not just estimating it.",
+    "items": [
+      {
+        "sheetNo": "A‑101",
+        "title": "ADUs &amp; Garage Conversions",
+        "description": "Turnkey garage-to-ADU conversions that add livable square footage, rental income, or equity — designed around your lot and your goals, never a generic floor plan.",
+        "tags": [
+          "Design &amp; Permits",
+          "Electrical / Plumbing",
+          "Structural"
+        ],
+        "image": "images/proj-adu-01.jpg",
+        "imageAlt": "ADU exterior with cedar siding at dusk"
+      },
+      {
+        "sheetNo": "A‑102",
+        "title": "Kitchen Remodeling",
+        "description": "Full gut-and-rebuild kitchens: layout changes, load-bearing wall removals, panel upgrades, relocated plumbing and electrical, cabinetry and finish coordination.",
+        "tags": [
+          "Layout Changes",
+          "MEP Rework",
+          "Finishes"
+        ],
+        "image": "images/proj-kit-07.jpg",
+        "imageAlt": "Kitchen remodel with sage green cabinetry"
+      },
+      {
+        "sheetNo": "A‑103",
+        "title": "Bathroom Remodeling",
+        "description": "Waterproofing done correctly, efficient plumbing rework, and finish-level detailing — from a single-fixture refresh to a complete reconfiguration.",
+        "tags": [
+          "Waterproofing",
+          "Plumbing",
+          "Tile &amp; Finish"
+        ],
+        "image": "images/proj-bath-04.jpg",
+        "imageAlt": "Bathroom remodel with gold fixtures and soaking tub"
+      },
+      {
+        "sheetNo": "A‑104",
+        "title": "Structural Modifications",
+        "description": "Load-bearing wall removals, beam sizing coordination, and structural repairs — always run past a licensed structural engineer before a wall comes down.",
+        "tags": [
+          "Engineering-Led",
+          "Permitted"
+        ],
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "sheetNo": "A‑105",
+        "title": "Design &amp; Permit Coordination",
+        "description": "Architectural drawings, engineering coordination, and city approvals handled from the start — so the permit is right the first time and the design actually works for how you'll use the space.",
+        "tags": [
+          "Architectural Drawings",
+          "Permit Ready"
+        ],
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "sheetNo": "A‑106",
+        "title": "Whole-Home Renovation",
+        "description": "Multi-room and whole-house projects that need one contractor holding the permits, the trades, and the schedule together from start to final sign-off.",
+        "tags": [
+          "Full Coordination",
+          "One Point of Contact"
+        ],
+        "image": "",
+        "imageAlt": ""
+      }
+    ]
+  },
+  "process": {
+    "sectionTitle": "How a project <em>moves</em>",
+    "sectionSub": "Four stages, in this order, every time — so you always know what's next.",
+    "items": [
+      {
+        "num": "01 · Consultation",
+        "title": "Confirm feasibility",
+        "description": "We walk the property, understand your goals, and confirm what's genuinely possible before anything is priced."
+      },
+      {
+        "num": "02 · Design &amp; Permits",
+        "title": "Plans &amp; approvals",
+        "description": "We coordinate drawings, engineering, and city approvals so the permit is right the first time."
+      },
+      {
+        "num": "03 · Build",
+        "title": "Organized execution",
+        "description": "A clear schedule, coordinated trades, and consistent updates. No guessing where things stand."
+      },
+      {
+        "num": "04 · Inspection",
+        "title": "Signed off, done right",
+        "description": "Final inspection and close-out, so the work is code-compliant and ready to use — not just finished."
+      }
+    ]
+  },
   "adu": {
+    "sectionTitle": "Garage to ADU, in <em>three</em> sizes",
+    "sectionSub": "A turnkey conversion product with fixed tiers, so pricing conversations start from a real number instead of a guess.",
     "studio": {
       "price": "$120,000"
     },
@@ -19,19 +131,190 @@
     },
     "oneBedDen": {
       "price": "$207,000"
-    }
+    },
+    "note": "Pricing reflects the Standard finish at each tier; Premium is available on all three sizes. Final pricing depends on site conditions, utility distance, and finish selections, and is confirmed after a walkthrough."
+  },
+  "why": {
+    "sectionTitle": "Why homeowners choose <em>Dream Haven</em>",
+    "sectionSub": "We don't compete on being the cheapest bid. We compete on the projects that have to be done correctly.",
+    "items": [
+      {
+        "roman": "i.",
+        "title": "Engineering-first solutions",
+        "description": "Structural work is coordinated with licensed engineers and architects before it is ever priced — not improvised mid-build."
+      },
+      {
+        "roman": "ii.",
+        "title": "Licensed &amp; insured",
+        "description": "CSLB #1127356, with hands-on experience across electrical, plumbing, drywall, and finish work."
+      },
+      {
+        "roman": "iii.",
+        "title": "Honest, direct communication",
+        "description": "Clear scopes, realistic timelines, and no surprises. You'll know what's happening and why."
+      },
+      {
+        "roman": "iv.",
+        "title": "One point of contact",
+        "description": "The owner handles estimating, permitting, and project management personally — never handed off to a call center."
+      }
+    ]
+  },
+  "vision": {
+    "sectionTitle": "Remodeling is the starting point, not the <em>end goal</em>",
+    "sectionSub": "Dream Haven is built to grow from remodeling into a full design-build and real estate development company — the same standards, applied to larger projects, over time.",
+    "trajectory": [
+      {
+        "label": "Today",
+        "name": "Kitchens, Baths &amp; ADUs"
+      },
+      {
+        "label": "Next",
+        "name": "Whole-Home Renovation"
+      },
+      {
+        "label": "Next",
+        "name": "Design-Build Services"
+      },
+      {
+        "label": "Ahead",
+        "name": "Fix &amp; Flip"
+      },
+      {
+        "label": "Ahead",
+        "name": "Ground-Up Homes"
+      },
+      {
+        "label": "Long Term",
+        "name": "Multifamily Development"
+      }
+    ]
+  },
+  "gallery": {
+    "sectionTitle": "Recent <em>projects</em>",
+    "sectionSub": "Drag the handle on a comparison to see where the project started. More before/after sets are added as current jobs wrap.",
+    "items": [
+      {
+        "image": "images/proj-kit-06.jpg",
+        "alt": "Light wood kitchen with dining table",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-adu-04.jpg",
+        "alt": "ADU living room interior",
+        "caption": "ADU / Garage Conversion"
+      },
+      {
+        "image": "images/proj-bath-05.jpg",
+        "alt": "Cream tile bathroom with brass tub fixtures",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/proj-bath-04.jpg",
+        "alt": "Bathroom with wood vanity and walk-in shower",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/proj-kit-05.jpg",
+        "alt": "Light wood kitchen with dining nook",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-kit-04.jpg",
+        "alt": "Cream kitchen with brass hardware",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-bath-03.jpg",
+        "alt": "Neutral bathroom with brass fixtures",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/proj-kit-03.jpg",
+        "alt": "Kitchen remodel with black cabinetry and bar seating",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-bath-02.jpg",
+        "alt": "Moody bathroom with black vanity",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/proj-adu-03.jpg",
+        "alt": "Modern ADU exterior with flat roof",
+        "caption": "ADU / Garage Conversion"
+      },
+      {
+        "image": "images/proj-kit-02.jpg",
+        "alt": "Kitchen remodel with sage green cabinets",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-kit-01.jpg",
+        "alt": "Kitchen remodel with green cabinetry",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/proj-bath-01.jpg",
+        "alt": "Bathroom remodel with green vanity",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/proj-adu-02.jpg",
+        "alt": "ADU exterior with white stucco and open door",
+        "caption": "ADU / Garage Conversion"
+      },
+      {
+        "image": "images/proj-adu-01.jpg",
+        "alt": "ADU exterior with cedar siding at dusk",
+        "caption": "ADU / Garage Conversion"
+      },
+      {
+        "image": "images/kitchen-navy-4.jpg",
+        "alt": "Kitchen remodel with navy island and marble countertops",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/bathroom-vanity.jpg",
+        "alt": "Bathroom remodel with black vanity and brass fixtures",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_2213.jpeg",
+        "alt": "Completed residential remodel",
+        "caption": "Residential Remodel"
+      },
+      {
+        "image": "https://img1.wsimg.com/isteam/ip/339c4962-26e4-444b-b2d4-5dc0150768c3/IMG_4630.jpeg",
+        "alt": "Bathroom remodel project",
+        "caption": "Bathroom Remodel"
+      },
+      {
+        "image": "images/kitchen-navy-2.jpg",
+        "alt": "Kitchen remodel with farmhouse sink and brass fixtures",
+        "caption": "Kitchen Remodel"
+      },
+      {
+        "image": "images/adu-after.jpg",
+        "alt": "Garage conversion ADU project",
+        "caption": "ADU / Garage Conversion"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Licensed California General Contractor specializing in kitchen, bathroom, and ADU remodeling across Los Angeles and Southern California."
   },
   "rating": {
-    "score": 5,
+    "score": 5.0,
     "count": 7
   },
   "reviewUrl": "https://www.google.com/search?q=Dream+Haven+Construction+West+Hollywood",
   "reviews": [
     {
       "stars": 5,
-      "text": "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation. Ayman handled all of the construction and renovation work, and we couldn’t be happier with the results.\n\nFrom the beginning, Ayman was professional, dependable, responsive, and very attentive to the details. He coordinated...",
+      "text": "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation. Ayman handled all of the construction and renovation work, and we couldn't be happier with the results. From the beginning, Ayman was professional, dependable, responsive, and very attentive to the details.",
       "name": "Cheryl Scott",
-      "project": "Home renovations"
+      "project": "Kitchen Renovation"
     },
     {
       "stars": 5,
@@ -59,9 +342,9 @@
     },
     {
       "stars": 5,
-      "text": "I love my new bathroom!! Thank you Dream Haven!",
-      "name": "Louise Copp",
-      "project": "Bathroom Remodel"
+      "text": "Great contractor. Knows what he's doing. My job looks great.",
+      "name": "William Preston",
+      "project": "Reasonable Price"
     }
   ]
 }
