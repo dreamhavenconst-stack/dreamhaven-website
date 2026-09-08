@@ -4,12 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Dream Haven — ADU Selections</title>
-<script>
-  // Set false only for an offline copy (e.g. saved to the iPad for use without wifi/login).
-  // Leave true for the hosted version on dreamhavenconstruction.com.
-  window.REQUIRE_LOGIN = true;
-</script>
+<title>Dream Haven Construction — Your ADU</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +13,6 @@
   --ink:#1F2A18; --green:#3F5C2F; --green-dp:#2A3F1F; --sage:#7C9463;
   --cream:#FAF8F2; --paper:#FFFFFF; --sand:#EDE7D9; --line:#DAD4C4; --muted:#77806E;
   --shadow:0 1px 2px rgba(31,42,24,.05),0 8px 28px rgba(31,42,24,.07); --r:14px;
-  --edit:#B4531F;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;height:100%}
@@ -29,13 +23,6 @@ body{background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-s
 .rail-top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
 .brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:15px;color:var(--green);white-space:nowrap}
 .stepname{font-size:12.5px;color:var(--muted);margin-left:auto;font-variant-numeric:tabular-nums}
-.editbtn{
-  font:inherit;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:var(--paper);
-  color:var(--muted);border-radius:99px;padding:6px 13px;cursor:pointer;white-space:nowrap;
-}
-body.editing .editbtn{background:var(--edit);border-color:var(--edit);color:#fff}
-.resetbtn{font:inherit;font-size:11.5px;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;display:none;white-space:nowrap}
-body.editing .resetbtn{display:inline}
 .ticks{display:flex;gap:4px;padding-bottom:10px}
 .tick{flex:1;height:3px;border-radius:2px;background:var(--line);transition:background .35s}
 .tick.done{background:var(--sage)} .tick.now{background:var(--green)}
@@ -47,13 +34,11 @@ body.editing .resetbtn{display:inline}
 
 .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
 h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(29px,5.2vw,42px);line-height:1.1;margin:0 0 14px;letter-spacing:-.015em}
-h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:21px;margin:0 0 12px}
 p.lead{font-size:18px;color:#3A452F;margin:0 0 22px;max-width:66ch}
 .small{font-size:13px;color:var(--muted)}
 
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
-.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.pcard .inner{padding:16px}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
 .pcard.win{border-color:var(--green);border-width:2px;background:#F4F7EE}
 .pcard .role{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
 .pcard.win .role{color:var(--green)}
@@ -66,14 +51,8 @@ p.lead{font-size:18px;color:#3A452F;margin:0 0 22px;max-width:66ch}
 .vs3 .amt{font-family:Fraunces,serif;font-size:19px;font-weight:700;color:var(--green)}
 .vs3 p{font-size:12.5px;color:var(--muted);margin-top:8px}
 
-.ask{border-left:3px solid var(--green);background:#F2F5EC;padding:14px 16px;border-radius:0 10px 10px 0;margin:20px 0}
-.ask .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px}
-.ask p{margin:0;font-size:16px;font-style:italic;color:#2F3A26}
-.ask p+p{margin-top:9px}
 .note{background:var(--sand);border-radius:10px;padding:13px 15px;font-size:13.5px;color:#3A452F;margin:18px 0}
 .note b{color:var(--green)}
-.note.warn{background:#F3E4DA;border:1px solid #D8A87C}
-.note.warn b{color:var(--edit)}
 
 .roomtabs{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}
 .roomtabs button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:99px;border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
@@ -86,51 +65,25 @@ p.lead{font-size:18px;color:#3A452F;margin:0 0 22px;max-width:66ch}
 .tierbar button[aria-pressed="true"].t2{background:#E4DCEC;border-color:#5C4A73;color:#3E3352}
 
 #itemgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}
-.item{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-.item .inner{padding:15px}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px;box-shadow:var(--shadow)}
 .item .cat{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sage)}
 .item h3{margin:5px 0 6px;font-size:15px;font-weight:600;line-height:1.3}
 .item .desc{font-size:12.5px;color:var(--muted);line-height:1.4;margin-bottom:10px}
-.item a.plink{font-size:12.5px;font-weight:600;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green)}
+.item a{font-size:12.5px;font-weight:600;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green)}
 
 .pricebar{display:flex;justify-content:space-between;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin:22px 0}
 .pricebar .l{font-size:14px;color:var(--muted)}
 .pricebar .n{font-family:Fraunces,serif;font-size:24px;font-weight:700;color:var(--green)}
 
-/* ---- photo slots (edit mode) ---- */
-.photoslot{
-  display:none;height:96px;position:relative;
-  background:repeating-linear-gradient(135deg,var(--sand),var(--sand) 10px,#F5F0E4 10px,#F5F0E4 20px);
-  background-size:cover;background-position:center;
+.cta{background:var(--green);border-radius:var(--r);padding:26px 24px;margin:22px 0;color:#fff}
+.cta h2{font-family:Fraunces,Georgia,serif;font-size:24px;margin:0 0 10px}
+.cta p{margin:0 0 18px;opacity:.92;font-size:15.5px}
+.ctarow{display:flex;gap:12px;flex-wrap:wrap}
+.ctarow a{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green);
+  font-weight:700;font-size:15px;padding:12px 20px;border-radius:10px;text-decoration:none;
 }
-.photoslot.has-photo{display:block}
-body.editing .photoslot{display:flex;align-items:center;justify-content:center}
-.photoslot .addbtn{
-  font:inherit;font-size:12px;font-weight:700;background:rgba(255,255,255,.92);color:var(--edit);
-  border:1px dashed var(--edit);border-radius:8px;padding:7px 12px;cursor:pointer;
-}
-.photoslot.has-photo .addbtn{background:rgba(255,255,255,.85)}
-
-/* ---- editable text affordance ---- */
-body.editing [data-editable="true"]{
-  outline:1.5px dashed rgba(180,83,31,.55); outline-offset:2px; border-radius:3px; cursor:text;
-}
-body.editing [data-editable="true"]:focus{outline:2px solid var(--edit); background:#FFF7EF}
-
-/* ---- link edit affordance ---- */
-.linkwrap{display:inline-flex;align-items:center;gap:6px}
-.editlink{
-  display:none;font:inherit;font-size:11px;font-weight:700;color:var(--edit);background:#FDEFE5;
-  border:1px solid var(--edit);border-radius:6px;padding:2px 7px;cursor:pointer;
-}
-body.editing .editlink{display:inline-block}
-
-.toast{
-  position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);
-  background:var(--ink);color:#fff;font-size:13px;padding:9px 16px;border-radius:99px;
-  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60;
-}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.ctarow a.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4)}
 
 .nav{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(250,248,242,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 20px calc(12px + env(safe-area-inset-bottom));display:flex;gap:11px;align-items:center;max-width:1000px;margin:0 auto}
 .btn{font:inherit;font-weight:600;font-size:16px;border-radius:11px;cursor:pointer;padding:14px 22px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
@@ -138,179 +91,105 @@ body.editing .editlink{display:inline-block}
 .btn[disabled]{opacity:.35}
 .jump{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:13px 9px;color:var(--muted);max-width:150px}
 @media(min-width:760px){body{font-size:18px} .stage{padding:38px 30px 130px}}
-
-/* ---- login gate ---- */
-body.locked .wrap{display:none}
-.gate{
-  display:none;min-height:100dvh;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:30px;background:var(--cream);
-}
-body.locked .gate{display:flex}
-.gate .brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:19px;color:var(--green);margin-bottom:26px}
-.gate h2{font-family:Fraunces,Georgia,serif;font-size:24px;margin:0 0 10px}
-.gate p{color:var(--muted);font-size:15px;max-width:36ch;margin:0 0 22px}
-.gate button{
-  font:inherit;font-weight:700;font-size:16px;background:var(--green);color:#fff;border:none;
-  border-radius:11px;padding:14px 28px;cursor:pointer;box-shadow:0 3px 12px rgba(63,92,47,.28);
-}
 </style>
 </head>
-<body class="locked">
-
-<div class="gate" id="gate">
-  <div class="brand">DREAM HAVEN CONSTRUCTION</div>
-  <h2>This page is private.</h2>
-  <p>Sign in with your Dream Haven account to view the ADU selections presentation.</p>
-  <button id="gateBtn">Sign in</button>
-</div>
-
+<body>
 <div class="wrap">
 
   <div class="rail">
     <div class="rail-top">
-      <span class="brand">Dream Haven — ADU Selections</span>
-      <button class="resetbtn" id="resetbtn">Reset all edits</button>
-      <button class="editbtn" id="editbtn">Edit mode: off</button>
-      <span class="stepname" id="stepname">1 / 7</span>
+      <span class="brand">Dream Haven Construction</span>
+      <span class="stepname" id="stepname">1 / 6</span>
     </div>
     <div class="ticks" id="ticks"></div>
   </div>
 
   <main class="stage" id="stage">
 
-    <section class="panel on" data-name="Company">
-      <div class="eyebrow">Who's actually building it</div>
-      <h1 data-editable="true">Who you'd actually be hiring.</h1>
-      <p class="lead" data-editable="true">Get three bids. When you do, ask each one these same questions.</p>
+    <!-- 1 · COMPANY -->
+    <section class="panel on" data-name="Who we are">
+      <div class="eyebrow">Dream Haven Construction</div>
+      <h1>Who you'd be working with.</h1>
+      <p class="lead">We're a licensed design-build general contractor based in West Hollywood, specializing in garage-to-ADU conversions across Los Angeles.</p>
 
       <div class="vs3">
-        <div class="col"><h4 data-editable="true">License</h4><div class="amt" data-editable="true">#1127356</div><p data-editable="true">CSLB verified — check it yourself at cslb.ca.gov</p></div>
-        <div class="col"><h4 data-editable="true">Reviews</h4><div class="amt" data-editable="true">5.0 ★ (6)</div><p data-editable="true">Every Google review to date, unfiltered</p></div>
-        <div class="col"><h4 data-editable="true">Trade experience</h4><div class="amt" data-editable="true">30+ yrs</div><p data-editable="true">Combined across our team and trade partners</p></div>
+        <div class="col"><h4>License</h4><div class="amt">#1127356</div><p>CSLB verified — check it any time at cslb.ca.gov</p></div>
+        <div class="col"><h4>Reviews</h4><div class="amt">5.0 ★ (6)</div><p>Every Google review to date</p></div>
+        <div class="col"><h4>Trade experience</h4><div class="amt">30+ yrs</div><p>Combined across our team and trade partners</p></div>
       </div>
-
 
       <div class="pgrid">
-        <div class="pcard"><div class="inner"><div class="role" data-editable="true">Most bidders</div><h3 data-editable="true">A verbal allowance per room — no product named</h3><p data-editable="true">"About $X for the kitchen, about $Y for the bath." No way to check it before you're committed.</p></div></div>
-        <div class="pcard win"><div class="inner"><div class="role" data-editable="true">Dream Haven</div><h3 data-editable="true">A named product for every item, with a link you can click now</h3><p data-editable="true">Cabinets to shower doors to windows — every line on the Selections sheet has a real product behind it.</p></div></div>
-        <div class="pcard"><div class="inner"><div class="role" data-editable="true">Most bidders</div><h3 data-editable="true">Design is one company, construction is another</h3><p data-editable="true">When something doesn't fit, each side blames the other. You're stuck in the middle of it.</p></div></div>
-        <div class="pcard win"><div class="inner"><div class="role" data-editable="true">Dream Haven</div><h3 data-editable="true">One licensed contractor, architecture-trained, on every job</h3><p data-editable="true">CSLB #1127356. The person who designs it is the person who builds it and stands behind it.</p></div></div>
-      </div>
-
-      <div class="ask">
-        <span class="k">The line that kills the competition</span>
-        <p data-editable="true">"Ask the other bidder to show you their line-item selections sheet with real products and links. Most won't have one — because most haven't actually priced the job, they've guessed at it."</p>
+        <div class="pcard win"><div class="role">Design-informed</div><h3>Architecture background, not just construction</h3><p>Our founder holds a degree in architecture and eight years of interior design experience — design and structure are considered together from day one.</p></div>
+        <div class="pcard win"><div class="role">One team</div><h3>The same person designs it and builds it</h3><p>No handoff between a design company and a separate construction crew. One licensed contractor, accountable start to finish.</p></div>
+        <div class="pcard win"><div class="role">Transparent pricing</div><h3>Every finish is a named product, not a guess</h3><p>Every item — cabinets to shower doors to windows — has a real product and price behind it, which you can review before committing to anything.</p></div>
       </div>
     </section>
 
-    <section class="panel" data-name="Our track record">
-      <div class="eyebrow">The honest answer</div>
-      <h1 data-editable="true">"Can I see some of your projects?"</h1>
-      <p class="lead" data-editable="true">You may ask this, and you deserve a straight answer: Dream Haven is about two years old, and we don't yet have a finished ADU in our portfolio. Here's what that does and doesn't mean.</p>
+    <!-- 2 · TRACK RECORD -->
+    <section class="panel" data-name="Our experience">
+      <div class="eyebrow">Straight answer</div>
+      <h1>New company. Real experience.</h1>
+      <p class="lead">Dream Haven is about two years old, and honestly, we don't yet have a finished ADU in our portfolio to show you. Here's what that does and doesn't mean.</p>
 
       <div class="pgrid">
-        <div class="pcard win">
-          <div class="inner">
-            <div class="role" data-editable="true">What you actually get</div>
-            <h3 data-editable="true">The owner on your job, not a trainee</h3>
-            <p data-editable="true">At a bigger, older company, your project is often run by whichever project manager is available. Here, it's me — every time, start to finish.</p>
-          </div>
-        </div>
-        <div class="pcard win">
-          <div class="inner">
-            <div class="role" data-editable="true">Real experience, different label</div>
-            <h3 data-editable="true">Kitchens, baths, structural work — completed and licensed</h3>
-            <p data-editable="true">The trades in an ADU are the same trades in a kitchen remodel: framing, electrical, plumbing, permits, finish work. I can show you that work today.</p>
-          </div>
-        </div>
-        <div class="pcard win">
-          <div class="inner">
-            <div class="role" data-editable="true">Trained before day one</div>
-            <h3 data-editable="true">Architecture degree, then 8 years in design</h3>
-            <p data-editable="true">Birzeit University, then eight years as an interior designer — before I ever pulled a contractor's license. Most 2-year-old GCs don't bring that.</p>
-          </div>
-        </div>
-        <div class="pcard win">
-          <div class="inner">
-            <div class="role" data-editable="true">Verify it yourself</div>
-            <h3 data-editable="true">Not a claim — a public record</h3>
-            <p data-editable="true">CSLB #1127356 at cslb.ca.gov. A 5.0 rating across every Google review to date. Both take thirty seconds to check.</p>
-          </div>
-        </div>
+        <div class="pcard"><div class="role">What that means for you</div><h3>The owner runs your job personally</h3><p>Not whichever project manager happens to be available — the same person from your first walkthrough to final inspection.</p></div>
+        <div class="pcard"><div class="role">Real, completed work</div><h3>Kitchens, bathrooms, and structural remodels</h3><p>The trades in an ADU are the same trades in a kitchen or bath remodel — framing, electrical, plumbing, permits, finish work. We're happy to show you that work.</p></div>
+        <div class="pcard"><div class="role">Trained before the license</div><h3>Architecture degree, then 8 years in design</h3><p>Birzeit University, then eight years as an interior designer — before ever pulling a contractor's license.</p></div>
+        <div class="pcard"><div class="role">Verifiable, not just claimed</div><h3>Check the license and reviews yourself</h3><p>CSLB #1127356 at cslb.ca.gov, and every Google review to date. Both take under a minute to check.</p></div>
       </div>
 
-      <div class="photoslot" style="height:150px;margin:20px 0"><button class="addbtn">＋ Add real project photos here</button></div>
-
-      <div class="ask">
-        <span class="k">Say this — word for word if it helps</span>
-        <p data-editable="true">"Fair question, and I'll give you a straight answer: Dream Haven is about two years old, and I don't have a finished ADU to show you yet. What I can show you is the kitchen and bathroom work I have completed, my license and reviews, and a payment schedule tied to milestones — so you're never paying ahead of the work."</p>
-      </div>
-
-      <div class="note"><b>Optional close if it's still a concern:</b> offer to structure the deposit and draws so the client's risk is lowest at the start and rises only as inspections pass — that answers the real fear behind the question, which is rarely "how many ADUs" and almost always "will my money be safe."</div>
-
-      <div class="note warn"><b>Never fabricate this.</b> Do not present renderings or other companies' work as your own completed projects. If a client asks whether a photo is a real finished job, always answer truthfully. One caught exaggeration costs far more trust than an honest "not yet."</div>
+      <div class="note"><b>How we structure payment:</b> your deposit and draws are tied to completed milestones and passed inspections — so you're never paying ahead of the work that's actually been done.</div>
     </section>
 
-    <section class="panel" data-name="The dream">
-      <div class="eyebrow">Before the finishes</div>
-      <h1 data-editable="true">Right now it's a garage. In a few months, it's someone's whole life.</h1>
-      <p class="lead" data-editable="true">Not just a kitchen, not just a bathroom — a real, permitted home. Every room you're about to see is a decision about who lives there and how.</p>
+    <!-- 3 · THE DREAM -->
+    <section class="panel" data-name="The possibility">
+      <div class="eyebrow">What it becomes</div>
+      <h1>Right now it's a garage. It could be someone's whole life.</h1>
+      <p class="lead">Not just a kitchen, not just a bathroom — a real, permitted home. Here's what that space could mean for you.</p>
 
-      
       <div class="vs3">
-        <div class="col"><h4 data-editable="true">Monthly rent</h4><div class="amt" data-editable="true">$2,000–$3,200</div><p data-editable="true">Typical one-bedroom conversion, 2026 LA market</p></div>
-        <div class="col"><h4 data-editable="true">Per year</h4><div class="amt" data-editable="true">$24K–$50K</div><p data-editable="true">Gross rental income across unit sizes</p></div>
-        <div class="col"><h4 data-editable="true">Added value</h4><div class="amt" data-editable="true">$150K–$500K</div><p data-editable="true">Permitted square footage the appraiser counts</p></div>
+        <div class="col"><h4>Monthly rent</h4><div class="amt">$2,000–$3,200</div><p>Typical one-bedroom conversion, 2026 LA market</p></div>
+        <div class="col"><h4>Per year</h4><div class="amt">$24K–$50K</div><p>Gross rental income across unit sizes</p></div>
+        <div class="col"><h4>Added value</h4><div class="amt">$150K–$500K</div><p>Permitted square footage the appraiser counts</p></div>
       </div>
 
       <div class="pgrid">
-        <div class="pcard"><div class="photoslot"><button class="addbtn">＋ Photo</button></div><div class="inner"><div class="role" data-editable="true">Family</div><h3 data-editable="true">A parent close, but independent</h3><p data-editable="true">Their own front door, their own kitchen, still fifty feet away.</p></div></div>
-        <div class="pcard"><div class="photoslot"><button class="addbtn">＋ Photo</button></div><div class="inner"><div class="role" data-editable="true">Income</div><h3 data-editable="true">Paying you back every month</h3><p data-editable="true">A finished unit rents from the day it clears final inspection.</p></div></div>
-        <div class="pcard"><div class="photoslot"><button class="addbtn">＋ Photo</button></div><div class="inner"><div class="role" data-editable="true">Space</div><h3 data-editable="true">An adult child, or a real home office</h3><p data-editable="true">Room to work or live separately, without leaving the property.</p></div></div>
-        <div class="pcard"><div class="photoslot"><button class="addbtn">＋ Photo</button></div><div class="inner"><div class="role" data-editable="true">Resale</div><h3 data-editable="true">Square footage the appraiser counts</h3><p data-editable="true">Permitted space adds value a buyer's lender will recognize.</p></div></div>
-      </div>
-
-      <div class="ask">
-        <span class="k">Ask, then go quiet</span>
-        <p data-editable="true">"Picture this finished — who's living in it, and what does their day look like?"</p>
-        <p data-editable="true">Whatever they answer is the story you're building toward for the rest of the walkthrough.</p>
+        <div class="pcard"><div class="role">Family</div><h3>A parent close, but independent</h3><p>Their own front door, their own kitchen, still fifty feet away.</p></div>
+        <div class="pcard"><div class="role">Income</div><h3>Paying you back every month</h3><p>A finished unit rents from the day it clears final inspection.</p></div>
+        <div class="pcard"><div class="role">Space</div><h3>An adult child, or a real home office</h3><p>Room to work or live separately, without leaving the property.</p></div>
+        <div class="pcard"><div class="role">Resale</div><h3>Square footage the appraiser counts</h3><p>Permitted space adds value a buyer's lender will recognize.</p></div>
       </div>
     </section>
 
+    <!-- 4 · WHY NOW -->
     <section class="panel" data-name="Why now">
       <div class="eyebrow">Timing</div>
-      <h1 data-editable="true">The longer this waits, the more the whole unit costs.</h1>
-      <div class="vs3">
-        <div class="col"><h4 data-editable="true">Permits issued</h4><div class="amt" data-editable="true">26,000+</div><p data-editable="true">ADU permits in Los Angeles, 2017–2023</p></div>
-        <div class="col"><h4 data-editable="true">Of new housing</h4><div class="amt" data-editable="true">20%</div><p data-editable="true">Share of all new LA housing permits in some years</p></div>
-        <div class="col"><h4 data-editable="true">Approval deadline</h4><div class="amt" data-editable="true">60 days</div><p data-editable="true">Most CA cities must act on a complete application</p></div>
-      </div>
-
+      <h1>The rules are the most favorable they've ever been.</h1>
 
       <div class="vs3">
-        <div class="col"><h4 data-editable="true">Materials</h4><div class="amt" style="font-size:19px" data-editable="true">Rise yearly</div><p data-editable="true">Cabinets, quartz, appliances, and lumber have gone up every year for a decade. This ADU is the cheapest it will ever be, priced today.</p></div>
-        <div class="col"><h4 data-editable="true">Lead times</h4><div class="amt" style="font-size:19px" data-editable="true">Weeks, not days</div><p data-editable="true">Windows, custom cabinets, and stone fabrication run 4-10 weeks. Ordering late pushes the whole move-in date later.</p></div>
-        <div class="col"><h4 data-editable="true">Your garage</h4><div class="amt" style="font-size:19px" data-editable="true">Earning nothing</div><p data-editable="true">Every month before construction starts is a month of rent or living space you didn't get.</p></div>
+        <div class="col"><h4>Permits issued</h4><div class="amt">26,000+</div><p>ADU permits in Los Angeles, 2017–2023</p></div>
+        <div class="col"><h4>Of new housing</h4><div class="amt">20%</div><p>Share of all new LA housing permits in some years</p></div>
+        <div class="col"><h4>Approval deadline</h4><div class="amt">60 days</div><p>Most CA cities must act on a complete application</p></div>
       </div>
 
-      <div class="note"><b>Keep it honest.</b> No invented deadline, no "today only" pricing. Rising material costs and real lead times are true and checkable — that's what makes this version of urgency work on a buyer this size.</div>
-
-      <div class="ask">
-        <span class="k">Say this</span>
-        <p data-editable="true">"I'm not going to tell you it has to be today. But the same unit costs more to build every quarter this waits — that's not a sales line, it's just what materials have done for years."</p>
+      <div class="pgrid">
+        <div class="pcard"><h3>Materials rise every year</h3><p>Cabinets, quartz, appliances, and lumber have gone up every year for a decade. The same unit is cheapest to build today.</p></div>
+        <div class="pcard"><h3>Lead times run weeks</h3><p>Windows, custom cabinets, and stone fabrication take 4–10 weeks. Starting later pushes your move-in date later too.</p></div>
+        <div class="pcard"><h3>$0 impact fees</h3><p>Units 750 sq ft and under are exempt from impact fees under SB 543, effective January 2026.</p></div>
       </div>
     </section>
 
-    <section class="panel" data-name="The selections">
+    <!-- 5 · SELECTIONS -->
+    <section class="panel" data-name="Selections">
       <div class="eyebrow">Room by room</div>
-      <h1 data-editable="true">Walk the whole unit.</h1>
-      <p class="lead" data-editable="true">Pick a room, then a tier. Every item updates to show the real product at that level.</p>
-      <div class="vs3">
-        <div class="col"><h4 data-editable="true">Standard package</h4><div class="amt" data-editable="true">~$50,446</div><p data-editable="true">All 73 finish items, base tier — included in your price</p></div>
-        <div class="col"><h4 data-editable="true">Upgrade package</h4><div class="amt" data-editable="true">~$82,848</div><p data-editable="true">Where most clients land, across the whole unit</p></div>
-        <div class="col"><h4 data-editable="true">Premium package</h4><div class="amt" data-editable="true">~$155,289</div><p data-editable="true">Full designer tier, every item</p></div>
-      </div>
+      <h1>Explore the finishes.</h1>
+      <p class="lead">Pick a room, then a tier. Every item updates to show the real product at that level.</p>
 
+      <div class="vs3">
+        <div class="col"><h4>Standard package</h4><div class="amt">~$50,446</div><p>All finish items, base tier — included in your price</p></div>
+        <div class="col"><h4>Upgrade package</h4><div class="amt">~$82,848</div><p>Where most clients land, across the whole unit</p></div>
+        <div class="col"><h4>Premium package</h4><div class="amt">~$155,289</div><p>Full designer tier, every item</p></div>
+      </div>
 
       <div class="roomtabs" id="roomtabs"></div>
       <div class="tierbar" id="tierbar">
@@ -322,24 +201,23 @@ body.locked .gate{display:flex}
       <div id="itemgrid"></div>
 
       <div class="pricebar">
-        <div class="l">Full line-by-line pricing for all 132 items lives in</div>
-        <div class="n">the Selections workbook</div>
+        <div class="l">Want the full line-by-line pricing?</div>
+        <div class="n">Ask us for the Selections workbook</div>
       </div>
-
-      <div class="note"><b>Show Standard first in every room.</b> It's the anchor — everything after reads as an upgrade, not a downgrade from something they saw first.</div>
     </section>
 
-    <section class="panel" data-name="Decide">
-      <div class="eyebrow">Put it together</div>
-      <h1 data-editable="true">Which rooms are worth upgrading first?</h1>
-      <p class="lead" data-editable="true">Most clients don't pick one tier for the whole unit — they mix. Upgrade the kitchen and bathroom, keep flooring and paint Standard, for example. That's exactly what the Selections workbook is built to handle, item by item.</p>
+    <!-- 6 · NEXT STEP -->
+    <section class="panel" data-name="Next step">
+      <div class="eyebrow">Next step</div>
+      <h1>Let's find out if your garage qualifies.</h1>
+      <p class="lead">The first step costs nothing — a feasibility check confirms whether your lot and garage qualify under current city rules before you spend a dollar on design.</p>
 
-      <div class="ask">
-        <span class="k">Close this section</span>
-        <p data-editable="true">"Which room matters most to you — kitchen, bathroom, or the systems nobody sees but everybody feels? Let's set that tier, and I'll show you what it does to the number."</p>
+      <div class="cta">
+        <h2>Free feasibility consultation</h2>
+        <p>No cost, no obligation. We'll walk the property and give you a straight answer.</p>
       </div>
 
-      <p class="small">Open the ADU Detailed Selections workbook now and set the Tier dropdown per item as they decide.</p>
+      <p class="small">Dream Haven Construction &middot; CSLB #1127356 &middot; (310) 844-5101 &middot; dreamhavenconstruction.com</p>
     </section>
 
   </main>
@@ -351,44 +229,8 @@ body.locked .gate{display:flex}
   </nav>
 </div>
 
-<div class="toast" id="toast">Saved</div>
-<input type="file" id="fileInput" accept="image/*" style="display:none">
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 (function(){
-  if (!window.REQUIRE_LOGIN) {
-    document.body.classList.remove('locked');
-    return;
-  }
-  var gateBtn = document.getElementById('gateBtn');
-  gateBtn.addEventListener('click', function(){
-    if (window.netlifyIdentity) window.netlifyIdentity.open('login');
-  });
-
-  function unlock(){ document.body.classList.remove('locked'); }
-  function lock(){ document.body.classList.add('locked'); }
-
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', function(user){
-      user ? unlock() : lock();
-    });
-    window.netlifyIdentity.on('login', function(){
-      unlock();
-      window.netlifyIdentity.close();
-    });
-    window.netlifyIdentity.on('logout', function(){ lock(); });
-    window.netlifyIdentity.init();
-  } else {
-    // Identity script failed to load (e.g. opened offline) — fail closed.
-    lock();
-  }
-})();
-</script>
-
-<script>
-(function(){
-  /* ============ wizard nav ============ */
   var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
   var ticks = document.getElementById('ticks');
   var jump  = document.getElementById('jump');
@@ -418,12 +260,10 @@ body.locked .gate{display:flex}
   back.addEventListener('click', function(){ showPanel(i-1); });
   jump.addEventListener('change', function(){ showPanel(parseInt(jump.value,10)); });
   document.addEventListener('keydown', function(e){
-    if (document.activeElement && document.activeElement.getAttribute('data-editable') === 'true') return;
     if (e.key === 'ArrowRight') showPanel(i+1);
     if (e.key === 'ArrowLeft')  showPanel(i-1);
   });
 
-  /* ============ selections tour data ============ */
   var ROOMS = [
     { room: "Kitchen", items: [
       { cat: "Cabinets", t: [
@@ -577,160 +417,16 @@ body.locked .gate{display:flex}
       var pick = it.t[curTier];
       var div = document.createElement('div');
       div.className = 'item';
-      div.dataset.tourKey = 'tour:' + room.room + ':' + curTier + ':' + it.cat;
       var q = encodeURIComponent(pick[0].split(' or ')[0]);
       div.innerHTML =
-        '<div class="photoslot"><button class="addbtn">＋ Photo</button></div>' +
-        '<div class="inner">' +
         '<div class="cat">' + it.cat + '</div>' +
-        '<h3 data-editable="true" data-field="title">' + pick[0] + '</h3>' +
-        '<div class="desc" data-editable="true" data-field="desc">' + pick[1] + '</div>' +
-        '<span class="linkwrap"><a class="plink" data-field="link" target="_blank" rel="noopener" href="https://www.google.com/search?q=' + q + '">View photos</a>' +
-        '<button class="editlink">Edit link</button></span>' +
-        '</div>';
+        '<h3>' + pick[0] + '</h3>' +
+        '<div class="desc">' + pick[1] + '</div>' +
+        '<a href="https://www.google.com/search?q=' + q + '" target="_blank" rel="noopener">View photos</a>';
       itemgrid.appendChild(div);
     });
-    wireCard(itemgrid);
-    applyStoredEdits(itemgrid);
   }
 
-  /* ============ EDIT MODE ============ */
-  var STORE_KEY = 'dh-adu-wizard-edits-v1';
-  var store = {};
-  try {
-    var raw = localStorage.getItem(STORE_KEY);
-    if (raw) store = JSON.parse(raw);
-  } catch (e) { store = {}; }
-
-  function persist(){
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); toast('Saved'); }
-    catch (e) { toast('Could not save (storage full or unavailable)'); }
-  }
-
-  var toastEl = document.getElementById('toast');
-  var toastTimer;
-  function toast(msg){
-    toastEl.textContent = msg;
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 1400);
-  }
-
-  // stable key for a static (non-tour) element: page name + tag + index within page
-  function staticKey(el){
-    var panel = el.closest('.panel');
-    var page = panel ? panel.dataset.name : 'global';
-    var all = panel.querySelectorAll('[data-editable="true"], .photoslot, .editlink');
-    var idx = Array.prototype.indexOf.call(all, el);
-    return 'static:' + page + ':' + idx;
-  }
-
-  function keyFor(el){
-    var tourCard = el.closest('[data-tour-key]');
-    if (tourCard) {
-      var field = el.dataset.field || (el.classList.contains('photoslot') ? 'photo' : 'x');
-      return tourCard.dataset.tourKey + ':' + field;
-    }
-    return staticKey(el);
-  }
-
-  function applyStoredEdits(scope){
-    scope = scope || document;
-    scope.querySelectorAll('[data-editable="true"]').forEach(function(el){
-      var k = keyFor(el);
-      if (store[k] && store[k].text != null) el.innerHTML = store[k].text;
-    });
-    scope.querySelectorAll('.photoslot').forEach(function(el){
-      var k = keyFor(el);
-      if (store[k] && store[k].img) {
-        el.style.backgroundImage = 'url(' + store[k].img + ')';
-        el.classList.add('has-photo');
-      }
-    });
-    scope.querySelectorAll('.plink').forEach(function(el){
-      var k = keyFor(el);
-      if (store[k] && store[k].href) el.href = store[k].href;
-    });
-  }
-
-  var fileInput = document.getElementById('fileInput');
-  var pendingSlot = null;
-
-  function wireCard(scope){
-    scope.querySelectorAll('.photoslot .addbtn').forEach(function(btn){
-      btn.onclick = function(e){
-        e.preventDefault();
-        pendingSlot = btn.closest('.photoslot');
-        fileInput.click();
-      };
-    });
-    scope.querySelectorAll('.editlink').forEach(function(btn){
-      btn.onclick = function(e){
-        e.preventDefault();
-        var link = btn.previousElementSibling;
-        var cur = link.getAttribute('href') || '';
-        var val = prompt('Paste a link for this item:', cur);
-        if (val) {
-          link.href = val;
-          var k = keyFor(link);
-          store[k] = store[k] || {};
-          store[k].href = val;
-          persist();
-        }
-      };
-    });
-  }
-
-  fileInput.addEventListener('change', function(){
-    if (!pendingSlot || !fileInput.files || !fileInput.files[0]) return;
-    var reader = new FileReader();
-    reader.onload = function(){
-      pendingSlot.style.backgroundImage = 'url(' + reader.result + ')';
-      pendingSlot.classList.add('has-photo');
-      var k = keyFor(pendingSlot);
-      store[k] = store[k] || {};
-      store[k].img = reader.result;
-      persist();
-      pendingSlot = null;
-      fileInput.value = '';
-    };
-    reader.readAsDataURL(fileInput.files[0]);
-  });
-
-  // save text edits on blur/input
-  document.addEventListener('input', function(e){
-    if (e.target.getAttribute && e.target.getAttribute('data-editable') === 'true') {
-      var k = keyFor(e.target);
-      store[k] = store[k] || {};
-      store[k].text = e.target.innerHTML;
-    }
-  });
-  document.addEventListener('blur', function(e){
-    if (e.target.getAttribute && e.target.getAttribute('data-editable') === 'true') persist();
-  }, true);
-
-  var editBtn = document.getElementById('editbtn');
-  var resetBtn = document.getElementById('resetbtn');
-  var editing = false;
-  function setEditing(on){
-    editing = on;
-    document.body.classList.toggle('editing', editing);
-    editBtn.textContent = 'Edit mode: ' + (editing ? 'on' : 'off');
-    document.querySelectorAll('[data-editable="true"]').forEach(function(el){
-      el.setAttribute('contenteditable', editing ? 'true' : 'false');
-    });
-  }
-  editBtn.addEventListener('click', function(){ setEditing(!editing); });
-  resetBtn.addEventListener('click', function(){
-    if (!confirm('Clear all edits (text, links, photos) in this browser?')) return;
-    store = {};
-    try { localStorage.removeItem(STORE_KEY); } catch(e){}
-    location.reload();
-  });
-
-  // wire static cards once
-  wireCard(document);
-  applyStoredEdits(document);
   renderTour();
   showPanel(0);
 })();
