@@ -362,14 +362,17 @@ ${PAGES.map(p => `  <url><loc>${SITE_URL}${p.url}</loc><lastmod>${today}</lastmo
 }
 
 // ---------- write ----------
-function copyDir(from, to) {
+function copyDir(from, to, skip = []) {
   if (!fs.existsSync(from)) return;
   fs.mkdirSync(to, { recursive: true });
   for (const e of fs.readdirSync(from, { withFileTypes: true })) {
+    if (skip.includes(e.name) || e.name === '.DS_Store') continue;
     const a = path.join(from, e.name), b = path.join(to, e.name);
     if (e.isDirectory()) copyDir(a, b); else fs.copyFileSync(a, b);
   }
 }
+
+const ROBOTS = `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
@@ -386,6 +389,10 @@ if (!PREVIEW) {
   fs.writeFileSync(path.join(OUT, 'sitemap.xml'), sitemap());
   copyDir(path.join(ROOT, 'admin'), path.join(OUT, 'admin'));
   copyDir(path.join(ROOT, 'content'), path.join(OUT, 'content'));
-  if (fs.existsSync(path.join(ROOT, 'robots.txt'))) fs.copyFileSync(path.join(ROOT, 'robots.txt'), path.join(OUT, 'robots.txt'));
+  // Your web tools (Scope Builder, ADU Selections, ...) stay at /tools/<name>/.
+  // The two admin-config helper files in tools/ are not published.
+  copyDir(path.join(ROOT, 'tools'), path.join(OUT, 'tools'), ['config.src.yml', 'make_config.py']);
+  const robots = path.join(ROOT, 'robots.txt');
+  fs.writeFileSync(path.join(OUT, 'robots.txt'), fs.existsSync(robots) ? fs.readFileSync(robots) : ROBOTS);
 }
 console.log(`Built ${PAGES.length} pages to ${path.relative(ROOT, OUT)}/`);
