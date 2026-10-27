@@ -1,0 +1,265 @@
+# SOURCE for admin/config.yml. Edit this, then run: python3 tools/make_config.py
+x-seo: &seo
+  label: "Google listing"
+  name: "seo"
+  widget: "object"
+  collapsed: true
+  fields:
+    - { label: "Page title (shown in Google and the browser tab)", name: "title", widget: "string" }
+    - { label: "Description (shown under the title in Google, about 150 characters)", name: "description", widget: "text" }
+
+x-hero: &hero
+  label: "Top of page"
+  name: "hero"
+  widget: "object"
+  fields:
+    - { label: "Small label above headline", name: "eyebrow", widget: "string" }
+    - { label: "Headline (wrap a word in <em> and </em> for brass italic)", name: "headline", widget: "string" }
+    - { label: "Intro paragraph", name: "lede", widget: "text" }
+    - { label: "Photo", name: "image", widget: "image" }
+    - { label: "Photo description (for Google and screen readers)", name: "imageAlt", widget: "string" }
+    - { label: "Caption under photo", name: "caption", widget: "string" }
+    - { label: "This image is a rendering (shows a Design visualization tag)", name: "visualization", widget: "boolean", default: false }
+
+x-gallery-item: &galleryItem
+  - { label: "Photo", name: "image", widget: "image" }
+  - { label: "Photo description", name: "alt", widget: "string" }
+  - { label: "Caption", name: "caption", widget: "string" }
+  - { label: "Type label (e.g. Kitchen, Bath, Exterior)", name: "kind", widget: "string" }
+  - { label: "This image is a rendering, not a finished job", name: "visualization", widget: "boolean", default: false }
+
+x-comparison: &comparison
+  - { label: "Before photo", name: "before", widget: "image" }
+  - { label: "Before photo description", name: "beforeAlt", widget: "string" }
+  - { label: "After photo", name: "after", widget: "image" }
+  - { label: "After photo description", name: "afterAlt", widget: "string" }
+  - { label: "Before label", name: "beforeLabel", widget: "string", default: "Before" }
+  - { label: "After label", name: "afterLabel", widget: "string", default: "After" }
+  - { label: "Caption", name: "caption", widget: "string" }
+  - { label: "Type label", name: "kind", widget: "string" }
+  - { label: "After image is a rendering", name: "visualization", widget: "boolean", default: false }
+
+x-title-text: &titleText
+  - { label: "Title", name: "title", widget: "string" }
+  - { label: "Text", name: "text", widget: "text" }
+
+x-faq: &faq
+  label: "FAQ"
+  name: "faq"
+  widget: "object"
+  fields:
+    - { label: "Section title", name: "title", widget: "string" }
+    - label: "Questions"
+      name: "items"
+      widget: "list"
+      summary: "{{fields.q}}"
+      fields:
+        - { label: "Question", name: "q", widget: "string" }
+        - { label: "Answer", name: "a", widget: "text" }
+
+x-gallery-section: &gallerySection
+  - { label: "Section title", name: "title", widget: "string" }
+  - { label: "Intro", name: "lede", widget: "text" }
+  - { label: "Before / after sliders", name: "comparisons", widget: "list", required: false, summary: "{{fields.caption}}", fields: *comparison }
+  - { label: "Gallery", name: "gallery", widget: "list", summary: "{{fields.caption}}", fields: *galleryItem }
+
+x-split: &splitFields
+  - { label: "Section title", name: "title", widget: "string" }
+  - { label: "Text", name: "text", widget: "text" }
+  - { label: "Checklist", name: "checks", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+  - { label: "Image", name: "image", widget: "image" }
+  - { label: "Image description", name: "imageAlt", widget: "string" }
+  - { label: "Caption", name: "caption", widget: "string" }
+  - { label: "Image is a rendering", name: "visualization", widget: "boolean", default: false }
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+site_url: "https://www.dreamhavenconstruction.com"
+display_url: "https://www.dreamhavenconstruction.com"
+
+collections:
+  - name: "pages"
+    label: "Website"
+    editor: { preview: false }
+    files:
+      - name: "site"
+        label: "Contact, reviews & shared info"
+        file: "content/site.json"
+        fields:
+          - label: "Contact details"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Phone (as displayed)", name: "phoneDisplay", widget: "string" }
+              - { label: "Phone (10 digits, no spaces)", name: "phoneDigits", widget: "string", pattern: ["^\\d{10}$", "Enter 10 digits, e.g. 3108445101"] }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Office", name: "office", widget: "string" }
+              - { label: "Service area", name: "serviceArea", widget: "string" }
+              - { label: "CSLB license number", name: "license", widget: "string" }
+              - { label: "Instagram handle (no @)", name: "instagram", widget: "string" }
+              - { label: "WhatsApp number (country code + number)", name: "whatsapp", widget: "string" }
+          - { label: "Footer description", name: "footerBlurb", widget: "text" }
+          - { label: "Trust points under each headline (Google rating is added automatically)", name: "trustLine", widget: "list", field: { label: "Point", name: "point", widget: "string" } }
+          - label: "Google rating"
+            name: "rating"
+            widget: "object"
+            fields:
+              - { label: "Average score", name: "score", widget: "number", value_type: "float", min: 1, max: 5, step: 0.1 }
+              - { label: "Number of reviews", name: "count", widget: "number", value_type: "int", min: 0 }
+          - { label: "Link to your Google reviews", name: "reviewUrl", widget: "string" }
+          - label: "Reviews (copy real reviews from Google)"
+            name: "reviews"
+            widget: "list"
+            summary: "{{fields.name}} · {{fields.project}}"
+            fields:
+              - { label: "Review text", name: "text", widget: "text" }
+              - { label: "Name (first name + last initial)", name: "name", widget: "string" }
+              - { label: "Project type", name: "project", widget: "string" }
+          - label: "How a project moves (4 steps, used on every page)"
+            name: "process"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Step title", name: "title", widget: "string" }
+              - { label: "Description", name: "text", widget: "text" }
+              - { label: "You get…", name: "outcome", widget: "string" }
+          - { label: "Privacy notice", name: "privacy", widget: "text" }
+
+      - name: "home"
+        label: "Home page"
+        file: "content/home.json"
+        fields:
+          - *seo
+          - *hero
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Intro", name: "lede", widget: "text" }
+              - label: "Service cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Links to page", name: "page", widget: "select", options: [ { label: "ADUs", value: "adu" }, { label: "Kitchens", value: "kitchens" }, { label: "Bathrooms", value: "bathrooms" } ] }
+                  - { label: "Small code (e.g. 01 · ADU)", name: "code", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+                  - { label: "Link text", name: "linkText", widget: "string" }
+                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Photo description", name: "imageAlt", widget: "string" }
+                  - { label: "Photo is a rendering", name: "visualization", widget: "boolean", default: false }
+              - { label: "Structural note: title", name: "structuralTitle", widget: "string" }
+              - { label: "Structural note: text", name: "structuralText", widget: "text" }
+          - label: "Process section"
+            name: "process"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Intro", name: "lede", widget: "text" }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Your name", name: "name", widget: "string" }
+              - { label: "Role line", name: "role", widget: "string" }
+              - { label: "Your photo", name: "photo", widget: "image" }
+              - { label: "Photo caption", name: "photoCaption", widget: "string" }
+              - { label: "Paragraphs", name: "paragraphs", widget: "list", field: { label: "Paragraph", name: "paragraph", widget: "text" } }
+              - { label: "Qualifications", name: "quals", widget: "list", summary: "{{fields.title}}", fields: *titleText }
+          - { label: "Recent projects", name: "projects", widget: "object", fields: *gallerySection }
+          - label: "Reviews section"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+
+      - name: "adu"
+        label: "ADU page"
+        file: "content/adu.json"
+        fields:
+          - *seo
+          - *hero
+          - label: "What's included"
+            name: "included"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Intro", name: "lede", widget: "text" }
+              - { label: "Items", name: "items", widget: "list", summary: "{{fields.title}}", fields: *titleText }
+          - label: "Sizes & price ranges"
+            name: "sizes"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Intro", name: "lede", widget: "text" }
+              - label: "Sizes"
+                name: "tiers"
+                widget: "list"
+                summary: "{{fields.name}}: {{fields.low}}–{{fields.high}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Size", name: "size", widget: "string" }
+                  - { label: "Range low (e.g. $120K)", name: "low", widget: "string" }
+                  - { label: "Range high (e.g. $150K)", name: "high", widget: "string" }
+                  - { label: "Mark as Most requested", name: "featured", widget: "boolean", default: false }
+                  - { label: "What's included", name: "items", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Note under the sizes", name: "note", widget: "text" }
+          - label: "What affects cost"
+            name: "factors"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Factors", name: "items", widget: "list", summary: "{{fields.title}}", fields: *titleText }
+          - label: "Design studies"
+            name: "studies"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Intro", name: "lede", widget: "text" }
+              - { label: "Before / after sliders", name: "comparisons", widget: "list", required: false, summary: "{{fields.caption}}", fields: *comparison }
+              - { label: "Gallery", name: "gallery", widget: "list", summary: "{{fields.caption}}", fields: *galleryItem }
+              - { label: "Note under gallery", name: "note", widget: "text", required: false }
+          - { label: "Process section title", name: "processTitle", widget: "string" }
+          - *faq
+
+      - name: "kitchens"
+        label: "Kitchens page"
+        file: "content/kitchens.json"
+        fields:
+          - *seo
+          - *hero
+          - label: "What we do"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", summary: "{{fields.title}}", fields: *titleText }
+          - { label: "Completed kitchens", name: "work", widget: "object", fields: *gallerySection }
+          - { label: "Design approach", name: "design", widget: "object", fields: *splitFields }
+          - { label: "Design studies", name: "studies", widget: "object", fields: *gallerySection }
+          - { label: "Process section title", name: "processTitle", widget: "string" }
+          - *faq
+
+      - name: "bathrooms"
+        label: "Bathrooms page"
+        file: "content/bathrooms.json"
+        fields:
+          - *seo
+          - *hero
+          - label: "What we do"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Section title", name: "title", widget: "string" }
+              - { label: "Items", name: "items", widget: "list", summary: "{{fields.title}}", fields: *titleText }
+          - { label: "Wet-area detail", name: "detail", widget: "object", fields: *splitFields }
+          - { label: "Bathroom photos & design studies", name: "studies", widget: "object", fields: *gallerySection }
+          - { label: "Process section title", name: "processTitle", widget: "string" }
+          - *faq
