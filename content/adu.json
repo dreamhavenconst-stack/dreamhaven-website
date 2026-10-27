@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Garage-to-ADU Conversions in Los Angeles | Dream Haven Construction",
+    "description": "Turnkey garage-to-ADU conversions in Los Angeles: feasibility, design, permits and construction. Studio, one-bedroom and one-bed-plus-den sizes."
+  },
+  "hero": {
+    "eyebrow": "ADU · Garage conversions",
+    "headline": "Turn your garage into a <em>fully finished</em> ADU.",
+    "lede": "A legal, permitted studio or one-bedroom unit built inside the garage you already have. We handle feasibility, design, engineering, permits and construction under one contract.",
+    "image": "/images/hero-adu-split.jpg",
+    "imageAlt": "Visualization of a garage half as storage and half as a finished ADU",
+    "caption": "Same garage, new purpose",
+    "visualization": true
+  },
+  "included": {
+    "title": "A turnkey <em>conversion</em>",
+    "lede": "One contract covers the whole conversion, from the first site visit to final sign-off.",
+    "items": [
+      { "title": "Feasibility review", "text": "Setbacks, parking, utility capacity and existing structure checked before you spend on design." },
+      { "title": "Design & drawings", "text": "Floor plan, 3D renderings and permit drawings for the unit." },
+      { "title": "Engineering", "text": "Structural and energy compliance coordinated with licensed engineers." },
+      { "title": "Permits & inspections", "text": "Plan check submission, corrections, and every inspection through final." },
+      { "title": "Utilities", "text": "Electrical, water, gas and sewer planned and connected, including panel upgrades when needed." },
+      { "title": "Finishes", "text": "Kitchen or kitchenette, full bath, flooring, lighting and paint in your chosen finish level." }
+    ]
+  },
+  "sizes": {
+    "title": "Three sizes, <em>real</em> ranges",
+    "lede": "Ranges reflect typical Los Angeles garage conversions. Your number is set in writing after a walkthrough.",
+    "tiers": [
+      { "name": "Studio", "size": "Approx. 400 sq ft", "low": "$120K", "high": "$150K", "featured": false, "items": ["Full electrical & plumbing rough-in", "Kitchenette & full bath", "Standard finish package", "Design & permit coordination"] },
+      { "name": "One Bedroom", "size": "Approx. 500 sq ft", "low": "$170K", "high": "$210K", "featured": true, "items": ["Separate bedroom & living area", "Full kitchen & full bath", "Standard or Premium finish", "Design & permit coordination"] },
+      { "name": "One Bed + Den", "size": "Approx. 600 sq ft", "low": "$207K", "high": "$250K", "featured": false, "items": ["Bedroom, den & living area", "Full kitchen & full bath", "Premium finish available", "Design & permit coordination"] }
+    ],
+    "note": "Where your project falls in a range depends on the factors below. Every proposal lists named allowances for selections and a written exclusions page, so the price you sign is the price you plan around."
+  },
+  "factors": {
+    "title": "What affects <em>cost</em>",
+    "items": [
+      { "title": "Utility distance", "text": "How far water, sewer and power have to run from the main house." },
+      { "title": "Existing structure", "text": "Slab condition, framing, and whether the garage needs foundation or wall work." },
+      { "title": "Electrical capacity", "text": "Whether the main panel can carry a second unit or needs an upgrade." },
+      { "title": "Finish level", "text": "Standard or Premium cabinetry, counters, tile, flooring and fixtures." }
+    ]
+  },
+  "studies": {
+    "title": "What a conversion <em>can look like</em>",
+    "lede": "Visualizations of the kind of unit we design. Drag across the first image to compare an existing garage with a design concept for it.",
+    "comparisons": [
+      { "before": "/images/adu-before.jpg", "beforeAlt": "Existing detached stucco garage", "after": "/images/adu-after.jpg", "afterAlt": "Visualization of the same garage converted to an ADU", "beforeLabel": "Existing", "afterLabel": "Concept", "caption": "Detached garage to studio", "kind": "Concept", "visualization": true }
+    ],
+    "gallery": [
+      { "image": "/images/proj-adu-04.jpg", "alt": "Visualization of an ADU living room", "caption": "ADU living room", "kind": "Interior", "visualization": true },
+      { "image": "/images/proj-adu-01.jpg", "alt": "Visualization of an ADU with cedar siding at dusk", "caption": "Cedar and stucco", "kind": "Exterior", "visualization": true },
+      { "image": "/images/proj-adu-02.jpg", "alt": "Visualization of an ADU with white stucco", "caption": "Stucco with black windows", "kind": "Exterior", "visualization": true },
+      { "image": "/images/proj-adu-03.jpg", "alt": "Visualization of a flat-roof modern ADU", "caption": "Flat-roof modern", "kind": "Exterior", "visualization": true }
+    ],
+    "note": "Our ADU experience includes conversions Ayman managed at a previous general contractor before founding Dream Haven."
+  },
+  "processTitle": "How an ADU <em>moves</em>",
+  "faq": {
+    "title": "ADU <em>questions</em>",
+    "items": [
+      { "q": "Can my garage be converted?", "a": "Most attached and detached garages in Los Angeles can be, but it depends on the structure, setbacks and utilities. The walkthrough answers this before you commit to design." },
+      { "q": "Do I need to replace the lost parking?", "a": "California law generally does not require replacement parking when a garage is converted to an ADU. We confirm the rules for your property during feasibility." },
+      { "q": "Can I rent the ADU?", "a": "Yes. A permitted ADU can be rented as a separate unit, which is why many owners build one for income." },
+      { "q": "Who handles the permits?", "a": "We do. We prepare the drawings, submit for plan check, respond to corrections and schedule every inspection." },
+      { "q": "Why a range instead of a fixed price?", "a": "Two garages of the same size can need very different utility and structural work. After the walkthrough, you get a written fixed scope and price for your property." }
+    ]
+  }
+}

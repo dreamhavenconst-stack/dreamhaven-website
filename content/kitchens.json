@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "Kitchen Remodeling in Los Angeles | Dream Haven Construction",
+    "description": "Design-first kitchen remodels in Los Angeles with 3D renderings, wall removals and engineered beams. Licensed CA contractor CSLB #1127356."
+  },
+  "hero": {
+    "eyebrow": "Kitchen remodeling",
+    "headline": "Kitchens designed around <em>how you cook</em>.",
+    "lede": "Layout, cabinetry, lighting and finishes planned together, with 3D renderings before anything is ordered. When the right kitchen means moving a wall, we bring in the engineer and build it properly.",
+    "image": "/images/kitchen-navy-1.jpg",
+    "imageAlt": "Finished navy kitchen with brass hardware",
+    "caption": "Navy kitchen · completed project",
+    "visualization": false
+  },
+  "services": {
+    "title": "Full kitchen <em>remodels</em>",
+    "items": [
+      { "title": "Layout redesign", "text": "Work triangle, storage and circulation reworked for how your household actually uses the room." },
+      { "title": "Opening walls", "text": "Load-bearing wall removal with engineered beams, so the kitchen can open to the living space." },
+      { "title": "Cabinetry", "text": "Custom and semi-custom cabinets with layouts drawn to the inch." },
+      { "title": "Counters & tile", "text": "Stone, quartz and tile selections coordinated with cabinet and lighting choices." },
+      { "title": "Electrical & lighting", "text": "New circuits, panel upgrades when needed, and layered task, ambient and accent lighting." },
+      { "title": "Plumbing & appliances", "text": "Sink and range relocation, gas lines, venting and appliance installation." }
+    ]
+  },
+  "work": {
+    "title": "Recent <em>kitchens</em>",
+    "lede": "Photos from a Dream Haven kitchen. Drag across the first photo to see it at framing stage.",
+    "comparisons": [
+      { "before": "/images/kitchen-before-2.jpg", "beforeAlt": "Kitchen at the framing and drywall stage", "after": "/images/kitchen-navy-1.jpg", "afterAlt": "Finished navy kitchen with brass hardware", "beforeLabel": "Before", "afterLabel": "After", "caption": "Navy kitchen, framing to finish", "kind": "Kitchen", "visualization": false }
+    ],
+    "gallery": [
+      { "image": "/images/kitchen-navy-4.jpg", "alt": "Navy island with marble countertop", "caption": "Navy island & marble", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/kitchen-navy-2.jpg", "alt": "Farmhouse sink with brass faucet", "caption": "Farmhouse sink", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/kitchen-navy-3.jpg", "alt": "Range wall with stainless hood", "caption": "Range wall", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/kitchen-before.jpg", "alt": "Kitchen during demolition", "caption": "Demolition stage", "kind": "In progress", "visualization": false }
+    ]
+  },
+  "design": {
+    "title": "See it <em>before</em> it's built",
+    "text": "With an architecture and interior design background, we design the kitchen with you rather than building from a sketch. You see the layout, cabinet elevations and finishes as visualizations before you sign off.",
+    "checks": ["Measured existing-conditions plan", "Layout options sketched at the first meeting", "3D renderings of the final design", "Finish and fixture schedule tied to your allowances"],
+    "image": "/images/proj-kit-07.jpg",
+    "imageAlt": "Visualization of a kitchen with sage cabinets and wood floors",
+    "caption": "Design visualization",
+    "visualization": true
+  },
+  "studies": {
+    "title": "Kitchen <em>directions</em>",
+    "lede": "Visualizations of finish directions we develop with clients. Each one starts from your measured room.",
+    "comparisons": [],
+    "gallery": [
+      { "image": "/images/proj-kit-02.jpg", "alt": "Visualization of a sage green kitchen", "caption": "Sage & brass", "kind": "Visualization", "visualization": true },
+      { "image": "/images/proj-kit-03.jpg", "alt": "Visualization of a black kitchen with bar seating", "caption": "Black & bar seating", "kind": "Visualization", "visualization": true },
+      { "image": "/images/proj-kit-05.jpg", "alt": "Visualization of a light wood kitchen with dining nook", "caption": "Light oak & dining nook", "kind": "Visualization", "visualization": true }
+    ]
+  },
+  "processTitle": "How a kitchen <em>moves</em>",
+  "faq": {
+    "title": "Kitchen <em>questions</em>",
+    "items": [
+      { "q": "Can you remove the wall between my kitchen and living room?", "a": "Often, yes. If the wall is load-bearing, a licensed structural engineer designs the beam and posts, and we permit and build to that design." },
+      { "q": "Do I need a permit for a kitchen remodel?", "a": "Most kitchen remodels that change electrical, plumbing, gas or walls need permits in Los Angeles. We pull them and schedule inspections." },
+      { "q": "Do you help choose finishes?", "a": "Yes. Design is part of the process. We build a finish schedule with you and tie each selection to an allowance in the contract." },
+      { "q": "How is pricing set?", "a": "After the walkthrough and design, you get a written scope and price, with named allowances for selections and a written exclusions page." }
+    ]
+  }
+}

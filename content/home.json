@@ -1,0 +1,63 @@
+{
+  "seo": {
+    "title": "Dream Haven Construction | Kitchens, Baths & ADUs in Los Angeles",
+    "description": "Licensed California General Contractor (CSLB #1127356) for kitchens, bathrooms, garage-to-ADU conversions and structural remodels across Los Angeles."
+  },
+  "hero": {
+    "eyebrow": "Licensed California General Contractor",
+    "headline": "Kitchens, baths and ADUs, <em>planned like an architect</em> would plan them.",
+    "lede": "Dream Haven Construction designs and builds remodels across Los Angeles. Every project starts with a real feasibility review, coordinated engineering and permits done properly, and the person who estimates your job is the one who runs it.",
+    "image": "/images/kitchen-navy-4.jpg",
+    "imageAlt": "Completed kitchen remodel with navy island and marble countertops",
+    "caption": "Navy kitchen · completed project",
+    "visualization": false
+  },
+  "services": {
+    "title": "What we <em>build</em>",
+    "lede": "Choose a service to see how we approach it, what's included, and recent work.",
+    "cards": [
+      { "page": "adu", "code": "01 · ADU", "title": "Garage-to-ADU conversions", "text": "Turn an unused garage into a legal, permitted studio or one-bedroom unit for rental income or family.", "linkText": "ADU sizes & price ranges", "image": "/images/proj-adu-02.jpg", "imageAlt": "Rendering of a converted garage ADU with stucco walls and black windows", "visualization": true },
+      { "page": "kitchens", "code": "02 · Kitchen", "title": "Kitchen remodels", "text": "Layouts that work for how you cook, with cabinetry, finishes and lighting planned together before work starts.", "linkText": "Kitchen remodeling", "image": "/images/kitchen-navy-1.jpg", "imageAlt": "Completed navy kitchen with brass hardware", "visualization": false },
+      { "page": "bathrooms", "code": "03 · Bath", "title": "Bathroom remodels", "text": "Primary suites and hall baths built with proper waterproofing, ventilation and tile detailing.", "linkText": "Bathroom remodeling", "image": "/images/bathroom-vanity.jpg", "imageAlt": "Completed bathroom with black vanity and brass fixtures", "visualization": false }
+    ],
+    "structuralTitle": "Structural & whole-home work.",
+    "structuralText": "Load-bearing wall removal, beams and posts, foundation work and electrical panel upgrades, built to a licensed structural engineer's design."
+  },
+  "process": {
+    "title": "How a project <em>moves</em>",
+    "lede": "Four stages, in this order, every time. You always know what's next and what you'll have in hand."
+  },
+  "about": {
+    "title": "A contractor trained to <em>design</em> first",
+    "name": "Ayman Nasr",
+    "role": "Founder & President · Dream Haven Construction",
+    "photo": "/images/ayman.jpg",
+    "photoCaption": "Ayman Nasr · Founder",
+    "paragraphs": [
+      "I'm Ayman Nasr, founder and president of Dream Haven Construction. Before I was a general contractor, I trained in architecture and spent about ten years as an interior designer. That background changes how a project goes: I read plans the way a designer does, I sketch options at your kitchen table, and I can tell you what a structural change will involve before we commit to it.",
+      "I personally handle your estimate, permits, engineering coordination, scheduling and inspections. You have one point of contact from the first walkthrough to the final sign-off. We don't compete on being the cheapest bid. We compete on doing the work correctly."
+    ],
+    "quals": [
+      { "title": "Engineering-first", "text": "Licensed structural engineers on every load-bearing change." },
+      { "title": "Design included", "text": "Layouts and 3D renderings so you see it before it's built." },
+      { "title": "Nothing hidden", "text": "Named allowances and a written exclusions list in every contract." },
+      { "title": "Licensed & compliant", "text": "CSLB #1127356. California-compliant contracts and payment schedules." }
+    ]
+  },
+  "projects": {
+    "title": "Recent <em>projects</em>",
+    "lede": "Photos from Dream Haven jobs. Drag across the first photo to see the kitchen at framing stage.",
+    "comparisons": [
+      { "before": "/images/kitchen-before-2.jpg", "beforeAlt": "Kitchen at the framing and drywall stage", "after": "/images/kitchen-navy-1.jpg", "afterAlt": "Finished navy kitchen with brass hardware", "beforeLabel": "Before", "afterLabel": "After", "caption": "Navy kitchen, framing to finish", "kind": "Kitchen", "visualization": false }
+    ],
+    "gallery": [
+      { "image": "/images/kitchen-navy-2.jpg", "alt": "Navy kitchen with farmhouse sink and brass faucet", "caption": "Farmhouse sink & brass fixtures", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/kitchen-navy-3.jpg", "alt": "Navy kitchen range wall with stainless hood", "caption": "Range wall", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/kitchen-navy-4.jpg", "alt": "Navy island with marble countertop", "caption": "Navy island", "kind": "Kitchen", "visualization": false },
+      { "image": "/images/bathroom-vanity.jpg", "alt": "Bathroom with black vanity and lit mirror", "caption": "Black vanity bath", "kind": "Bath", "visualization": false }
+    ]
+  },
+  "reviews": {
+    "title": "What clients <em>say</em>"
+  }
+}
