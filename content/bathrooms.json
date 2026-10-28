@@ -1,11 +1,11 @@
 {
   "seo": {
     "title": "Bathroom Remodeling in Los Angeles | Dream Haven Construction",
-    "description": "Bathroom remodels in Los Angeles: walk-in showers, layout changes and waterproofing done to spec. Licensed CA contractor CSLB #1127356."
+    "description": "Bathroom remodels in Los Angeles: walk-in showers, layout changes and waterproofing done to spec, permitted and inspected. Licensed contractor CSLB #1127356."
   },
   "hero": {
-    "eyebrow": "Bathroom remodeling",
-    "headline": "Bathrooms built <em>watertight</em>, then made beautiful.",
+    "eyebrow": "Bathroom remodeling in Los Angeles",
+    "headline": "Los Angeles bathroom remodels, built <em>watertight</em> first.",
     "lede": "Primary suites and hall baths with layouts that work, waterproofing done to spec, and tile set with care. The parts you can't see are the parts we take most seriously.",
     "image": "/images/bathroom-vanity.jpg",
     "imageAlt": "Completed bathroom with black vanity, lit mirror and brass fixtures",
@@ -15,18 +15,41 @@
   "services": {
     "title": "Full bathroom <em>remodels</em>",
     "items": [
-      { "title": "Layout changes", "text": "Moving the toilet, vanity or shower, or expanding into a closet to make the room work." },
-      { "title": "Walk-in & curbless showers", "text": "Sloped floors, linear drains and glass enclosures planned at the framing stage." },
-      { "title": "Tub-to-shower conversions", "text": "Remove an unused tub and replace it with a larger, accessible shower." },
-      { "title": "Tile & stone", "text": "Floor and wall tile layouts drawn in advance so cuts and grout lines land where they should." },
-      { "title": "Vanities & fixtures", "text": "Single or double vanities, wall-hung toilets and fixture packages coordinated with the design." },
-      { "title": "Ventilation & lighting", "text": "Properly sized exhaust fans, vanity lighting and dedicated circuits." }
+      {
+        "title": "Layout changes",
+        "text": "Moving the toilet, vanity or shower, or expanding into a closet to make the room work."
+      },
+      {
+        "title": "Walk-in & curbless showers",
+        "text": "Sloped floors, linear drains and glass enclosures planned at the framing stage."
+      },
+      {
+        "title": "Tub-to-shower conversions",
+        "text": "Remove an unused tub and replace it with a larger, accessible shower."
+      },
+      {
+        "title": "Tile & stone",
+        "text": "Floor and wall tile layouts drawn in advance so cuts and grout lines land where they should."
+      },
+      {
+        "title": "Vanities & fixtures",
+        "text": "Single or double vanities, wall-hung toilets and fixture packages coordinated with the design."
+      },
+      {
+        "title": "Ventilation & lighting",
+        "text": "Properly sized exhaust fans, vanity lighting and dedicated circuits."
+      }
     ]
   },
   "detail": {
     "title": "What happens <em>behind</em> the tile",
     "text": "Most bathroom failures start where nobody looks: the shower pan, the corners and the valve penetrations. We detail those first and inspect them before any tile goes up.",
-    "checks": ["Waterproofing membrane on shower walls and floor", "Flood test of the shower pan before tile", "Blocking for grab bars, niches and glass", "Exhaust fan ducted to the exterior"],
+    "checks": [
+      "Waterproofing membrane on shower walls and floor",
+      "Flood test of the shower pan before tile",
+      "Blocking for grab bars, niches and glass",
+      "Exhaust fan ducted to the exterior"
+    ],
     "image": "/images/proj-bath-03.jpg",
     "imageAlt": "Visualization of a walk-in shower with glass enclosure and niche",
     "caption": "Walk-in shower concept",
@@ -37,21 +60,63 @@
     "lede": "Visualizations of finish directions we develop with clients. More completed bathroom photos are added as current jobs wrap up.",
     "comparisons": [],
     "gallery": [
-      { "image": "/images/proj-bath-04.jpg", "alt": "Visualization of a bathroom with floating oak vanity and walk-in shower", "caption": "Floating oak vanity", "kind": "Visualization", "visualization": true },
-      { "image": "/images/proj-bath-02.jpg", "alt": "Visualization of a dark bathroom with black vanity", "caption": "Dark & moody", "kind": "Visualization", "visualization": true },
-      { "image": "/images/proj-bath-01.jpg", "alt": "Visualization of a bathroom with green vanity", "caption": "Green vanity & tub", "kind": "Visualization", "visualization": true },
-      { "image": "/images/proj-bath-05.jpg", "alt": "Visualization of a cream tile bathroom with brass fixtures", "caption": "Cream tile & brass", "kind": "Visualization", "visualization": true },
-      { "image": "/images/bathroom-vanity.jpg", "alt": "Completed bathroom with black vanity", "caption": "Completed: black vanity bath", "kind": "Bath", "visualization": false }
+      {
+        "image": "/images/proj-bath-04.jpg",
+        "alt": "Visualization of a bathroom with floating oak vanity and walk-in shower",
+        "caption": "Floating oak vanity",
+        "kind": "Visualization",
+        "visualization": true
+      },
+      {
+        "image": "/images/proj-bath-02.jpg",
+        "alt": "Visualization of a dark bathroom with black vanity",
+        "caption": "Dark & moody",
+        "kind": "Visualization",
+        "visualization": true
+      },
+      {
+        "image": "/images/proj-bath-01.jpg",
+        "alt": "Visualization of a bathroom with green vanity",
+        "caption": "Green vanity & tub",
+        "kind": "Visualization",
+        "visualization": true
+      },
+      {
+        "image": "/images/proj-bath-05.jpg",
+        "alt": "Visualization of a cream tile bathroom with brass fixtures",
+        "caption": "Cream tile & brass",
+        "kind": "Visualization",
+        "visualization": true
+      },
+      {
+        "image": "/images/bathroom-vanity.jpg",
+        "alt": "Completed bathroom with black vanity",
+        "caption": "Completed: black vanity bath",
+        "kind": "Bath",
+        "visualization": false
+      }
     ]
   },
   "processTitle": "How a bathroom <em>moves</em>",
   "faq": {
     "title": "Bathroom <em>questions</em>",
     "items": [
-      { "q": "Can you move the toilet or shower?", "a": "Usually, yes. Moving drains depends on the floor structure and access below. We check this at the walkthrough." },
-      { "q": "Do I need a permit?", "a": "Most remodels that change plumbing, electrical or walls need permits in Los Angeles. We pull them and schedule inspections." },
-      { "q": "Can I use my home during a bathroom remodel?", "a": "Yes, if you have another bathroom. We keep the work area closed off and clean the site each day." },
-      { "q": "How is pricing set?", "a": "After the walkthrough and design, you get a written scope and price, with named allowances for tile and fixtures and a written exclusions page." }
+      {
+        "q": "Can you move the toilet or shower?",
+        "a": "Usually, yes. Moving drains depends on the floor structure and access below. We check this at the walkthrough."
+      },
+      {
+        "q": "Do I need a permit?",
+        "a": "Most remodels that change plumbing, electrical or walls need permits in Los Angeles. We pull them and schedule inspections."
+      },
+      {
+        "q": "Can I use my home during a bathroom remodel?",
+        "a": "Yes, if you have another bathroom. We keep the work area closed off and clean the site each day."
+      },
+      {
+        "q": "How is pricing set?",
+        "a": "After the walkthrough and design, you get a written scope and price, with named allowances for tile and fixtures and a written exclusions page."
+      }
     ]
   }
 }

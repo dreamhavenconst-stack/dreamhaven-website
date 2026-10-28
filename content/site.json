@@ -10,22 +10,110 @@
     "whatsapp": "13108445101"
   },
   "footerBlurb": "Licensed California general contractor for kitchens, bathrooms, ADUs and structural remodels across Los Angeles and Southern California.",
-  "trustLine": ["CSLB #1127356", "Licensed, bonded & insured", "Los Angeles & SoCal"],
-  "rating": { "score": 5.0, "count": 7 },
+  "ctaLabel": "Book a Consultation",
+  "contactTitle": "Book a <em>consultation</em>",
+  "contactLede": "Tell us about the project. Phone and a short description are enough to start.",
+  "nextSteps": [
+    {
+      "title": "We call you",
+      "text": "Within one business day, to understand the project and answer first questions."
+    },
+    {
+      "title": "Walkthrough at your property",
+      "text": "We measure and check structure, utilities and permits so you know what's possible."
+    },
+    {
+      "title": "Written scope and price",
+      "text": "A clear proposal with named allowances and an exclusions page. No pressure to sign."
+    }
+  ],
+  "areas": [
+    "Los Angeles",
+    "West Hollywood",
+    "Beverly Hills",
+    "Hollywood",
+    "Santa Monica",
+    "Culver City",
+    "Silver Lake",
+    "Los Feliz",
+    "Studio City",
+    "Sherman Oaks",
+    "Encino",
+    "Burbank",
+    "Glendale",
+    "Pasadena",
+    "Long Beach"
+  ],
+  "trustLine": [
+    "CSLB #1127356",
+    "Licensed, bonded & insured",
+    "Los Angeles & SoCal"
+  ],
+  "rating": {
+    "score": 5.0,
+    "count": 7
+  },
   "reviewUrl": "https://www.google.com/search?q=Dream+Haven+Construction+West+Hollywood",
+  "googleProfileUrl": "",
   "reviews": [
-    { "text": "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation… From the beginning, Ayman was professional, dependable, responsive, and very attentive to the details.", "name": "Cheryl S.", "project": "Kitchen renovation" },
-    { "text": "He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.", "name": "Andrei D.", "project": "Kitchen remodel" },
-    { "text": "Ayman is amazing! He is on time, brings everything he needs, and explains the job… Great work on electrical also. Plumbing and walls also handled like a pro.", "name": "Christel H.", "project": "Kitchen, electrical & plumbing" },
-    { "text": "I am very happy with the results and the professionalism that Ayman showed.", "name": "Sofia S.", "project": "Kitchen remodel" },
-    { "text": "Very thoughtful and caring work… Great job all around! Highly recommend for appliance install and set up!", "name": "Scott O.", "project": "Appliance install" },
-    { "text": "Great contractor. Knows what he's doing. My job looks great.", "name": "William P.", "project": "Google review" }
+    {
+      "text": "We had a wonderful experience working with Ayman and Dream Haven Construction on our kitchen renovation… From the beginning, Ayman was professional, dependable, responsive, and very attentive to the details.",
+      "name": "Cheryl S.",
+      "project": "Kitchen renovation"
+    },
+    {
+      "text": "He is an honest, responsible, and professional general contractor who always arrives on time and keeps everything organized and on schedule.",
+      "name": "Andrei D.",
+      "project": "Kitchen remodel"
+    },
+    {
+      "text": "Ayman is amazing! He is on time, brings everything he needs, and explains the job… Great work on electrical also. Plumbing and walls also handled like a pro.",
+      "name": "Christel H.",
+      "project": "Kitchen, electrical & plumbing"
+    },
+    {
+      "text": "I am very happy with the results and the professionalism that Ayman showed.",
+      "name": "Sofia S.",
+      "project": "Kitchen remodel"
+    },
+    {
+      "text": "Very thoughtful and caring work… Great job all around! Highly recommend for appliance install and set up!",
+      "name": "Scott O.",
+      "project": "Appliance install"
+    },
+    {
+      "text": "Great contractor. Knows what he's doing. My job looks great.",
+      "name": "William P.",
+      "project": "Google review"
+    }
   ],
   "process": [
-    { "title": "Walkthrough & feasibility", "text": "We visit the property, measure, and check zoning, utilities and structure so there are no surprises later.", "outcome": "a clear go / no-go" },
-    { "title": "Design & engineering", "text": "Layout, 3D renderings and finish direction, coordinated with structural engineers where the design needs it.", "outcome": "drawings you can see" },
-    { "title": "Permits & written scope", "text": "We handle plan check and permits. Your contract lists the scope, named allowances, and what is excluded.", "outcome": "a fixed scope and price" },
-    { "title": "Build & closeout", "text": "Scheduled trades, inspections passed, a clean site each day, and a final walkthrough before sign-off.", "outcome": "a finished, signed-off space" }
+    {
+      "title": "Walkthrough & feasibility",
+      "text": "We visit the property, measure, and check zoning, utilities and structure so there are no surprises later.",
+      "outcome": "a clear go / no-go"
+    },
+    {
+      "title": "Design & engineering",
+      "text": "Layout, 3D renderings and finish direction, coordinated with structural engineers where the design needs it.",
+      "outcome": "drawings you can see"
+    },
+    {
+      "title": "Permits & written scope",
+      "text": "We handle plan check and permits. Your contract lists the scope, named allowances, and what is excluded.",
+      "outcome": "a fixed scope and price"
+    },
+    {
+      "title": "Build & closeout",
+      "text": "Scheduled trades, inspections passed, a clean site each day, and a final walkthrough before sign-off.",
+      "outcome": "a finished, signed-off space"
+    }
   ],
-  "privacy": "When you send a request through this site, we collect the details you enter (name, phone, email, property address, project details and any photos) so we can respond and prepare an estimate. We don't sell your information or share it with anyone except the engineers, designers or trades we need to involve in your project, and only with your knowledge. To see or delete what we hold about you, email info@dreamhavenconstruction.com."
+  "privacy": "When you send a request through this site, we collect the details you enter (name, phone, email, property address, project details and any photos) so we can respond and prepare an estimate. We don't sell your information or share it with anyone except the engineers, designers or trades we need to involve in your project, and only with your knowledge. To see or delete what we hold about you, email info@dreamhavenconstruction.com.",
+  "analytics": {
+    "ga4Id": "",
+    "adsId": "",
+    "adsLeadLabel": "",
+    "adsCallLabel": ""
+  }
 }

@@ -51,6 +51,33 @@ collections:
     - label: Footer description
       name: footerBlurb
       widget: text
+    - label: Main button text (used on every page)
+      name: ctaLabel
+      widget: string
+    - label: Contact section title (wrap a word in <em> and </em> for brass italic)
+      name: contactTitle
+      widget: string
+    - label: Contact section intro
+      name: contactLede
+      widget: text
+    - label: What happens after someone sends the form (shown next to the form)
+      name: nextSteps
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - label: Step
+        name: title
+        widget: string
+      - label: Detail
+        name: text
+        widget: text
+    - label: Cities and neighborhoods you serve (helps people find you on Google)
+      name: areas
+      widget: list
+      field:
+        label: Area
+        name: area
+        widget: string
     - label: Trust points under each headline (Google rating is added automatically)
       name: trustLine
       widget: list
@@ -77,6 +104,10 @@ collections:
     - label: Link to your Google reviews
       name: reviewUrl
       widget: string
+    - label: Google Business Profile link (from Google Maps → Share; links your profile to this site)
+      name: googleProfileUrl
+      widget: string
+      required: false
     - label: Reviews (copy real reviews from Google)
       name: reviews
       widget: list
@@ -108,6 +139,27 @@ collections:
     - label: Privacy notice
       name: privacy
       widget: text
+    - label: Lead tracking (Google Analytics & Google Ads)
+      name: analytics
+      widget: object
+      collapsed: true
+      fields:
+      - label: Google Analytics 4 measurement ID (starts with G-)
+        name: ga4Id
+        widget: string
+        required: false
+      - label: Google Ads ID (starts with AW-)
+        name: adsId
+        widget: string
+        required: false
+      - label: Google Ads conversion label for form leads
+        name: adsLeadLabel
+        widget: string
+        required: false
+      - label: Google Ads conversion label for phone calls
+        name: adsCallLabel
+        widget: string
+        required: false
   - name: home
     label: Home page
     file: content/home.json

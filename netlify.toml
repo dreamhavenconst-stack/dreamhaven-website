@@ -5,9 +5,73 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Old or likely-typed addresses go to the right page instead of a dead end.
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you/"
+  status = 301
+[[redirects]]
+  from = "/adu.html"
+  to = "/adu/"
+  status = 301
+[[redirects]]
+  from = "/kitchens.html"
+  to = "/kitchens/"
+  status = 301
+[[redirects]]
+  from = "/bathrooms.html"
+  to = "/bathrooms/"
+  status = 301
+[[redirects]]
+  from = "/adus"
+  to = "/adu/"
+  status = 301
+[[redirects]]
+  from = "/garage-conversion"
+  to = "/adu/"
+  status = 301
+[[redirects]]
+  from = "/kitchen-remodeling"
+  to = "/kitchens/"
+  status = 301
+[[redirects]]
+  from = "/kitchen-remodel"
+  to = "/kitchens/"
+  status = 301
+[[redirects]]
+  from = "/bathroom-remodeling"
+  to = "/bathrooms/"
+  status = 301
+[[redirects]]
+  from = "/bathroom-remodel"
+  to = "/bathrooms/"
+  status = 301
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/contact-us"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/about"
+  to = "/#about"
+  status = 301
+[[redirects]]
+  from = "/about-us"
+  to = "/#about"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Photos rarely change: let browsers keep them for a week so repeat visits load fast.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
